@@ -1,51 +1,53 @@
-.App {
-  text-align: center;
+@import url("https://instantui-cl.netlify.app/component.css");
+
+:root {
+    --primary: #389E6F;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bg-primary {
+    background-color: var(--primary);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.primary-color-bg {
+    background-color: var(--primary);
 }
 
-.App-header {
-  background-color: #22201c;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
+.text-primary {
+    color: var(--primary);
+
 }
 
-.App-link {
-  color: #61dafb;
+body {
+    background-color: var(--light);
 }
 
-.brand-title {
-  font-size: 3rem;
-  color: #d9d9d9;
+.material-icons {
+    font-size: 1.5rem;
 }
 
-.brand-title span {
-  color: #ffde59;
+.menu-icons {
+    width: 15rem;
 }
 
-.brand-description {
-  font-size: 1.4rem;
+.logo {
+    padding: 0 3rem;
+    font-size: 1.5rem;
 }
 
-.links {
-  display: flex;
+.search {
+    border: none;
+    background-color: var(--white);
+
 }
 
-.links a {
-  color: #d9d9d9;
-  font-size: 1.2rem;
-  margin: 1rem;
+.side-margin {
+    margin: 0 5rem;
+}
+
+.footer {
+    height: 10rem;
+    color: var(--gray);
+    font-size: 0.8rem;
+    padding: 4rem 10rem;
+    border-top: 1px solid var(--light-gray);
 }
