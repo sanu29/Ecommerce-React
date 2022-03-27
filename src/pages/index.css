@@ -1,0 +1,53 @@
+@import url("https://instantui-cl.netlify.app/component.css");
+
+:root {
+    --primary: #389E6F;
+}
+
+.bg-primary {
+    background-color: var(--primary);
+}
+
+.primary-color-bg {
+    background-color: var(--primary);
+}
+
+.text-primary {
+    color: var(--primary);
+
+}
+
+body {
+    background-color: var(--light);
+}
+
+.material-icons {
+    font-size: 1.5rem;
+}
+
+.menu-icons {
+    width: 15rem;
+}
+
+.logo {
+    padding: 0 3rem;
+    font-size: 1.5rem;
+}
+
+.search {
+    border: none;
+    background-color: var(--white);
+
+}
+
+.side-margin {
+    margin: 0 5rem;
+}
+
+.footer {
+    height: 10rem;
+    color: var(--gray);
+    font-size: 0.8rem;
+    padding: 4rem 10rem;
+    border-top: 1px solid var(--light-gray);
+}

@@ -1,0 +1,35 @@
+.quantity-input {
+    width: 2rem;
+    height: 2rem;
+    border: none;
+}
+
+.quantity-btn {
+    height: 2.4rem;
+    width: 2.4rem;
+    border: none;
+    margin: none;
+}
+
+.quantity-btn:hover {
+    font-size: 1.5rem;
+}
+
+.card-img {
+    height: 20rem;
+    width: 15rem;
+    margin: 0rem;
+}
+
+.margin-top {
+    margin: 1rem 0 !important;
+}
+
+.card-main {
+    margin: 0 1rem;
+}
+
+.divider {
+    color: var(--primary);
+    margin: 1rem 0;
+}
