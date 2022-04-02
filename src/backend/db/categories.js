@@ -1,5 +1,5 @@
-import { v4 as uuid } from "uuid";
 
+import { v4 as uuid } from "uuid";
 /**
  * Category Database can be added here.
  * You can add category of your wish with different attributes
@@ -8,20 +8,65 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "fiction",
+    categoryName: "dairy",
+    image : "https://instantgrocery.netlify.app/assets/images/dairy.jpg",
     description:
-      "literature in the form of prose, especially novels, that describes imaginary events and people",
+      "This category contains all the dairy products",
   },
   {
     _id: uuid(),
-    categoryName: "non-fiction",
+    categoryName: "staples",
+    image : "https://instantgrocery.netlify.app/assets/images/staples.jpg",
     description:
-      "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
+      "This category contains all the pulses and dals",
   },
   {
     _id: uuid(),
-    categoryName: "horror",
+    categoryName: "vegetables",
+    image : "https://instantgrocery.netlify.app/assets/images/hero.jpg",
     description:
-      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
+      "This category contains all vegetables",
   },
+  {
+    _id: uuid(),
+    categoryName: "fruits",
+    image : "https://instantgrocery.netlify.app/assets/images/fruit.jpg",
+    description:
+      "This category contains all Fruits",
+  },
+  {
+    _id: uuid(),
+    categoryName: "snacks",
+    image : "https://instantgrocery.netlify.app/assets/images/snaks.jpg",
+    description:
+      "This category contains all snacks",
+  },
+  {
+    _id: uuid(),
+    categoryName: "sprouts",
+    image : "https://instantgrocery.netlify.app/assets/images/sprouts.jpg",
+    description:
+      "This category contains all meatandchicken",
+  },
+  {
+    _id: uuid(),
+    categoryName: "dryfruits",
+    image : "https://instantgrocery.netlify.app/assets/images/dry-fruit.jpg",
+
+    description:
+      "This category contains all dryfruits",
+  },
+  {
+    _id: uuid(),
+    categoryName: "spices",
+    image : "https://instantgrocery.netlify.app/assets/images/spices.jpg",
+    description:
+      "This category contains all spices",
+  },
+  {
+    _id: uuid(),
+    categoryName : 'meat and chicken',
+    image : "https://instantgrocery.netlify.app/assets/images/chicken.jpg",
+    description : "this category will contain all the fresh Meat, Chicken and Eggs"
+  }
 ];

@@ -1,0 +1,62 @@
+.categories-img {
+    height: 8rem;
+    width: 12rem;
+    margin: 2rem 0.5rem;
+    cursor: pointer;
+}
+
+.category-overlay {
+    top: 50%;
+    left: 0.5rem;
+    text-align: center;
+    padding: 4px;
+    cursor: pointer;
+    width: 12rem;
+}
+
+.category-overlay:hover {
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+.categories-img:hover {
+    box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+        0 2px 2px hsl(0deg 0% 0% / 0.075),
+        0 4px 4px hsl(0deg 0% 0% / 0.075),
+        0 8px 8px hsl(0deg 0% 0% / 0.075),
+        0 16px 16px hsl(0deg 0% 0% / 0.075);
+    border: solid 1px var(--gray);
+}
+
+.hero-img {
+    width: 40rem;
+    min-width: 10rem;
+    height: 20rem;
+}
+
+.hero-desc {
+    width: 25rem;
+    min-width: 10rem;
+    height: 20rem;
+}
+
+.card {
+    cursor: pointer;
+}
+
+.card:hover {
+    width: 13rem;
+    box-shadow: 3px .125rem 1.25rem var(--black-light);
+}
+
+.margin-top {
+    margin-top: 5rem;
+}
+
+.margin-bottom {
+    margin-bottom: 5rem;
+}
+
+.margin-side-10rem {
+    margin: 0 10rem;
+}
