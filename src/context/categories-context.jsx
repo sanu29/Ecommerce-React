@@ -1,7 +1,5 @@
 import axios from "axios";
-import { createContext, useContext } from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 
 const CategoriesContext = createContext()
@@ -11,20 +9,20 @@ function CategoriesContextProvider({children})
 {
     const [categories , setCategories] = useState()
     useEffect (() =>{
-         async function getCategories(){
+         (async ()=>
+         {
             try{
-            const response =  await ( axios.get( '/api/categories'))
-             setCategories(response.data.categories)
-            }
+                 const response =  await ( axios.get( '/api/categories'))
+                 setCategories(response.data.categories)
+                }
             catch(err)
-            {
-                console.log(err)
-            }
-         }
-         getCategories()
+                 {
+                     console.log(err)
+                 }
+         })()
      
     },[])
-    // console.log(categories)
+   
         if(categories === undefined)
         {  
                 setCategories("loading")
@@ -32,9 +30,9 @@ function CategoriesContextProvider({children})
 
         return(
         
-        <CategoriesContext.Provider  value = {{categories}}>
-            {children}
-        </CategoriesContext.Provider>
+                <CategoriesContext.Provider  value = {{categories}}>
+                      {children}
+                </CategoriesContext.Provider>
     )
 }
 const useCategoriesContext = ()=> useContext(CategoriesContext)

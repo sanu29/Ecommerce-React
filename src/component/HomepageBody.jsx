@@ -5,33 +5,31 @@ import {Link} from "react-router-dom";
 
 
 
-export const HomepageBody = () => {
-
-const {categories} = useCategoriesContext();
-if(categories === 'loading')
-{
-return (<h1>
-  <ThreeDots color="#2BAD60" height="100" width="100" />
-</h1>
-)
-}
+export const HomepageBody = () =>
+ {
+    const {categories} = useCategoriesContext();
+    if(categories === 'loading')
+    {
+        return (<h1>
+                <ThreeDots color="#2BAD60" height="100" width="100" />
+              </h1>
+              )
+    }
 else{
-return (
-<div className="container-main">
-  <div className="categories d-flex-row flex-wrap justify-content-center side-margin">
-    {categories.map((item)=>{
-    if(item.id<6) { return(<Link to={'/product'} className="position-relative">
-      <img src={item.image} className="categories-img border-radius-md " alt="dairy" srcset="" />
-
-      <div
-        className="category-overlay position-absolute opacity-75 bg-white font-weight-bolder text-align-center padding-4 ">
-        {item.categoryName}
-
-      </div>
-      </Link>
-
-      )}})}
-  </div>
+    return (
+        <div className="container-main">
+        <div className="categories d-flex-row flex-wrap justify-content-center side-margin">
+        {categories.map((item)=>{
+        if(item.id<6) 
+        {
+             return(<Link to={'/product'} className="position-relative">
+            <img src={item.image} className="categories-img border-radius-md " alt="dairy" srcset="" />
+            <div className="category-overlay position-absolute opacity-75 bg-white font-weight-bolder text-align-center padding-4 ">
+              {item.categoryName}
+            </div>
+           </Link>
+        )}})}
+   </div>
 
   <Link to={'/product'} className="  w-100 d-flex justify-content-center align-items-center boder-1 border-color-gray ">
   <div
@@ -57,16 +55,16 @@ return (
       {categories.map((item)=>{
       if(item.id>5)
       {
-      return(
-      <Link to={'/product'} className="card border-radius-sm">
-      <img className="card-img-main border-radius-sm " src={item.image} alt="jacket" />
-      <div className="card-primary">
-        <div className="card-subtitle">{item.categoryName}</div>
-        <h2 className="card-title"><span className="text-muted">Upto </span> 10% Off</h2>
-      </div>
-      </Link>
-      )
-      }
+           return(
+             <Link to={'/product'} className="card border-radius-sm">
+              <img className="card-img-main border-radius-sm " src={item.image} alt="hero" />
+             <div className="card-primary">
+              <div className="card-subtitle">{item.categoryName}</div>
+              <h2 className="card-title"><span className="text-muted">Upto </span> 10% Off</h2>
+            </div>
+            </Link>
+        )
+        }
       })}
 
 
@@ -83,7 +81,7 @@ return (
 
     <div className="d-flex justify-content-center align-items-center responsive-image flex-wrap ">
 
-      {<img src="https://instantgrocery.netlify.app/assets/images/feat.png" className="width-100" alt="" srcset="" /> }
+      {<img src="https://instantgrocery.netlify.app/assets/images/feat.png" className="width-100" alt="features" srcset="" /> }
     </div>
 
   </div>

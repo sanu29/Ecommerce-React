@@ -1,4 +1,4 @@
-import { Header, Footer , HomepageBody} from "../component/AllComponnts"
+import { Header, Footer , HomepageBody} from "../component/AllComponents"
 import { useCategoriesContext } from "../context/categories-context";
 import "../App.css"
 import "./Homepage.css"
