@@ -1,13 +1,16 @@
-.card {
+.card-product {
     width: 12rem;
     margin:1rem ;
     margin-bottom: 0px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.card-img-main{
+.card-img-main-product{
     width: 10rem;
     height: 8rem;
 
+}
+.product-list{
+    list-style: none;
 }
 .card:hover{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
