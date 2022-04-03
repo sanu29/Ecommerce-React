@@ -1,6 +1,15 @@
+import "../App.css"
+import "./Products.css"
+import {Header, Footer , Filter, Products} from "../component/AllComponents"
 export const ProductListing = () => 
 {
     return (
-        <h2>Products</h2>
+        <>
+            <Header/>
+            <Filter/>
+            <Products/>
+            <Footer/>
+
+        </>
     )
 }
