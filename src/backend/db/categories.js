@@ -65,7 +65,7 @@ export const categories = [
   },
   {
     _id: uuid(),
-    categoryName : 'meat and chicken',
+    categoryName : 'nonveg',
     image : "https://instantgrocery.netlify.app/assets/images/chicken.jpg",
     description : "this category will contain all the fresh Meat, Chicken and Eggs"
   }

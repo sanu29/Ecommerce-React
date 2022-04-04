@@ -22,8 +22,8 @@ else{
         {categories.map((item)=>{
         if(item.id<6) 
         {
-             return(<Link to={'/product'} className="position-relative">
-            <img src={item.image} className="categories-img border-radius-md " alt="dairy" srcset="" />
+             return(<Link to={'/product'} className="position-relative" key={item.id}>
+            <img src={item.image} className="categories-img border-radius-md " alt="dairy" srcSet="" />
             <div className="category-overlay position-absolute opacity-75 bg-white font-weight-bolder text-align-center padding-4 ">
               {item.categoryName}
             </div>
@@ -41,7 +41,7 @@ else{
     </div>
     <div>
       <img src="https://instantgrocery.netlify.app/assets/images/vegetable.jpg" alt="discount" className="hero-img"
-        srcset="" />
+        srcSet="" />
     </div>
   </div>
 
@@ -56,7 +56,7 @@ else{
       if(item.id>5)
       {
            return(
-             <Link to={'/product'} className="card border-radius-sm">
+             <Link to={'/product'} className="card border-radius-sm" key={item.id}>
               <img className="card-img-main border-radius-sm " src={item.image} alt="hero" />
              <div className="card-primary">
               <div className="card-subtitle">{item.categoryName}</div>
@@ -81,7 +81,7 @@ else{
 
     <div className="d-flex justify-content-center align-items-center responsive-image flex-wrap ">
 
-      {<img src="https://instantgrocery.netlify.app/assets/images/feat.png" className="width-100" alt="features" srcset="" /> }
+      {<img src="https://instantgrocery.netlify.app/assets/images/feat.png" className="width-100" alt="features" srcSet="" /> }
     </div>
 
   </div>
