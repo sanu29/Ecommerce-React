@@ -8,6 +8,7 @@
     width: 10rem;
     height: 8rem;
     transition: transform 250ms;
+    margin-top:3rem;
 
 }
 .card-img-main-product:hover{
@@ -93,7 +94,7 @@
 }
 
 .sortby{
-    margin: 2rem 0 2rem  0;
+    margin: 0rem 0 2rem  0;
 }
 label{
     cursor: pointer;
@@ -101,4 +102,17 @@ label{
 
 label:hover{
     font-weight: bold;
+}
+.rating-div{
+    margin:2rem 0 2rem  0; ;
+}
+.card-badge{
+    height: 2rem;
+    color: var(--white);
+    /* font-size: 12px; */
+}
+.material-icons-rating{
+    font-size: 5px;
+
+
 }

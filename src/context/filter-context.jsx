@@ -25,6 +25,7 @@ function FilterContextProvider ({children})
         nonveg:true,
         lowtohigh: false,
         hightolow: false,
+        rating : 1
     })
     return(
         <FilterContext.Provider value={{state,dispatch}}>

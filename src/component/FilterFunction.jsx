@@ -25,6 +25,8 @@
             return{...state, hightolow:action.payload , lowtohigh:false}
         case 'lowtohigh':
             return{...state, lowtohigh:action.payload , hightolow:false}
+        case 'rating':
+                return {...state, rating:action.payload}
         default:
             return state
     }

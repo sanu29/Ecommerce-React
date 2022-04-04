@@ -13,6 +13,7 @@ export const products = [
     price: 220,
     quantity : "kg",
     categoryName: "fruits",
+    rating : 5,
   }  ,
  
   {
@@ -22,6 +23,7 @@ export const products = [
     price: 120,
     quantity : "500grms",
     categoryName: "dairy",
+    rating : 3,
   }  ,
   {
     _id: uuid(),
@@ -30,6 +32,7 @@ export const products = [
     price: 120,
     quantity : "500grms",
     categoryName: "snacks",
+    rating : 5,
   },
   {
     _id: uuid(),
@@ -38,6 +41,7 @@ export const products = [
     price: 220,
     quantity : "kg",
     categoryName: "nonveg",
+    rating : 5,
   }  ,
   {
     _id: uuid(),
@@ -46,6 +50,7 @@ export const products = [
     price: 73,
     quantity : "kg",
     categoryName: "fruits",
+    rating : 4,
   },
   {
     _id: uuid(),
@@ -54,6 +59,7 @@ export const products = [
     price: 250,
     quantity : "kg",
     categoryName: "nonveg",
+    rating : 5
   }  ,
   {
     _id: uuid(),
@@ -62,6 +68,7 @@ export const products = [
     price: 26,
     quantity : "kg",
     categoryName: "vegetables",
+    rating : 3,
   },
   {
     _id: uuid(),
@@ -70,6 +77,7 @@ export const products = [
     price: 30,
     quantity : "6pc",
     categoryName: "nonveg",
+    rating : 4,
   }  ,
   {
     _id: uuid(),
@@ -78,6 +86,7 @@ export const products = [
     price: 270,
     quantity : "kg",
     categoryName: "nonveg",
+    rating : 5,
   }  ,
   {
     _id: uuid(),
@@ -86,6 +95,7 @@ export const products = [
     price: 72,
     quantity : "packet",
     categoryName: "spices",
+    rating : 2,
   }  ,
   {
     _id: uuid(),
@@ -94,6 +104,7 @@ export const products = [
     price: 28,
     quantity : "500grms",
     categoryName: "vegetables",
+    rating : 3,
   },
   {
     _id: uuid(),
@@ -102,6 +113,7 @@ export const products = [
     price: 160,
     quantity : "packet",
     categoryName: "dairy",
+    rating : 5,
   }  ,
   {
     _id: uuid(),
@@ -110,6 +122,7 @@ export const products = [
     price: 30,
     quantity : "packet",
     categoryName: "snacks",
+    rating : 5,
   }  ,
   {
     _id: uuid(),
@@ -118,6 +131,7 @@ export const products = [
     price: 120,
     quantity : "500ml",
     categoryName: "dairy",
+    rating : 5
   }  ,
   {
     _id: uuid(),
@@ -126,6 +140,7 @@ export const products = [
     price: 200,
     quantity : "kg",
     categoryName: "dryfruits",
+    rating : 4
   }  ,
 
     {
@@ -135,6 +150,7 @@ export const products = [
     price: 320,
     quantity : "kg",
     categoryName: "nonveg",
+    rating : 3,
   }  ,
   {
     _id: uuid(),
@@ -143,6 +159,7 @@ export const products = [
     price: 50,
     quantity : "kg",
     categoryName: "fruits",
+    rating : 2,
   }  ,
     {
     _id: uuid(),
@@ -151,6 +168,7 @@ export const products = [
     price: 30,
     quantity : "kg",
     categoryName: "vegetables",
+    rating : 1,
   },
     {
     _id: uuid(),
@@ -159,6 +177,7 @@ export const products = [
     price: 250,
     quantity : "500grms",
     categoryName: "snacks",
+    rating : 5,
   }  ,
     {
     _id: uuid(),
@@ -167,6 +186,7 @@ export const products = [
     price: 50,
     quantity : "packet",
     categoryName: "snacks",
+    rating : 4,
   }  ,
     {
     _id: uuid(),
@@ -175,6 +195,7 @@ export const products = [
     price: 30,
     quantity : "packet",
     categoryName: "snacks",
+    rating : 3,
   }  ,
     {
     _id: uuid(),
@@ -183,6 +204,7 @@ export const products = [
     price: 30,
     quantity : "packet",
     categoryName: "snacks",
+    rating : 3,
   }  ,
     {
     _id: uuid(),
@@ -191,6 +213,7 @@ export const products = [
     price: 500,
     quantity : "500grms",
     categoryName: "dryfruits",
+    rating : 1,
   }  ,
     {
     _id: uuid(),
@@ -199,6 +222,7 @@ export const products = [
     price: 120,
     quantity : "kg",
     categoryName: "fruits",
+    rating : 5,
   }  ,
 
     {
@@ -208,6 +232,7 @@ export const products = [
     price: 80,
     quantity : "kg",
     categoryName: "staples",
+    rating : 2,
   }  ,
   {
     _id: uuid(),
@@ -216,6 +241,7 @@ export const products = [
     price: 560,
     quantity : "500grms",
     categoryName: "dryfruits",
+    rating : 4,
   }  ,
   {
     _id: uuid(),
@@ -224,6 +250,7 @@ export const products = [
     price: 30,
     quantity : "250grms",
     categoryName: "sprouts",
+    rating : 3,
   },
   {
     _id: uuid(),
@@ -232,6 +259,7 @@ export const products = [
     price: 72,
     quantity : "kg",
     categoryName: "staples",
+    rating : 2,
   }  ,
     {
     _id: uuid(),
@@ -240,6 +268,7 @@ export const products = [
     price: 25,
     quantity : "500ml",
     categoryName: "dairy",
+    rating : 4,
   }  ,  
   {
     _id: uuid(),
@@ -248,6 +277,7 @@ export const products = [
     price: 102,
     quantity : "kg",
     categoryName: "staples",
+    rating : 5,
   },
     {
     _id: uuid(),
@@ -256,6 +286,7 @@ export const products = [
     price: 112,
     quantity : "500grms",
     categoryName: "sprouts",
+    rating : 1,
   }  ,
   {
     _id: uuid(),
@@ -264,6 +295,7 @@ export const products = [
     price: 110,
     quantity : "packet",
     categoryName: "snacks",
+    rating : 4,
   }  ,
     {
     _id: uuid(),
@@ -272,6 +304,7 @@ export const products = [
     price: 45,
     quantity : "500grms",
     categoryName: "staples",
+    rating : 2,
   },
     {
     _id: uuid(),
@@ -280,6 +313,7 @@ export const products = [
     price: 72,
     quantity : "kg",
     categoryName: "staples",
+    rating : 4,
   },
     {
     _id: uuid(),
@@ -288,6 +322,7 @@ export const products = [
     price: 30,
     quantity : "packet",
     categoryName: "snacks",
+    rating : 5,
   },
   {
     _id: uuid(),
@@ -296,6 +331,7 @@ export const products = [
     price: 60,
     quantity : "packet",
     categoryName: "snacks",
+    rating : 5,
   },
     {
     _id: uuid(),
@@ -304,6 +340,7 @@ export const products = [
     price: 42,
     quantity : "packet",
     categoryName: "snacks",
+    rating : 1,
   },
     {
     _id: uuid(),
@@ -312,6 +349,7 @@ export const products = [
     price: 30,
     quantity : "kg",
     categoryName: "vegetables",
+    rating : 3,
   },
     {
     _id: uuid(),
@@ -320,6 +358,7 @@ export const products = [
     price: 50,
     quantity : "kg",
     categoryName: "fruits",
+    rating : 2,
   },
   {
     _id: uuid(),
@@ -328,6 +367,7 @@ export const products = [
     price: 30,
     quantity : "packet",
     categoryName: "spices",
+    rating : 1,
   },
   {
     _id: uuid(),
@@ -336,6 +376,7 @@ export const products = [
     price: 22,
     quantity : "packet",
     categoryName: "dairy",
+    rating : 4,
   },
   {
     _id: uuid(),
@@ -344,6 +385,7 @@ export const products = [
     price: 47,
     quantity : "packet",
     categoryName: "spices",
+    rating : 3,
   },
   {
     _id: uuid(),
@@ -352,6 +394,7 @@ export const products = [
     price: 80,
     quantity : "kg",
     categoryName: "staples",
+    rating : 4,
   },
  
     {
@@ -361,6 +404,7 @@ export const products = [
     price: 620,
     quantity : "kg",
     categoryName: "dryfruits",
+    rating : 5,
   },
     {
     _id: uuid(),
@@ -369,6 +413,7 @@ export const products = [
     price: 38,
     quantity : "kg",
     categoryName: "vegetables",
+    rating : 4,
   },
     {
     _id: uuid(),
@@ -377,6 +422,7 @@ export const products = [
     price: 30,
     quantity : "packet",
     categoryName: "snacks",
+    rating : 1,
   },
   {
     _id: uuid(),
@@ -385,6 +431,7 @@ export const products = [
     price: 72,
     quantity : "500grms",
     categoryName: "staples",
+    rating : 4,
   },
     {
     _id: uuid(),
@@ -393,6 +440,7 @@ export const products = [
     price: 660,
     quantity : "kg",
     categoryName: "dryfruits",
+    rating : 4,
   },
     {
     _id: uuid(),
@@ -401,6 +449,7 @@ export const products = [
     price: 37,
     quantity : "kg",
     categoryName: "vegetables",
+    rating : 2,
   },
   {
     _id: uuid(),
@@ -409,6 +458,7 @@ export const products = [
     price: 49,
     quantity : "packet",
     categoryName: "spices",
+    rating : 3,
   },
     {
     _id: uuid(),
@@ -417,6 +467,7 @@ export const products = [
     price: 250,
     quantity : "500grms",
     categoryName: "fruits",
+    rating : 1,
   },
     {
     _id: uuid(),
@@ -425,6 +476,7 @@ export const products = [
     price: 40,
     quantity : "kg",
     categoryName: "fruits",
+    rating : 2,
   },
 
     {
@@ -434,6 +486,7 @@ export const products = [
     price: 50,
     quantity : "packet",
     categoryName: "spices",
+    rating : 4,
   },
     {
     _id: uuid(),
@@ -442,6 +495,7 @@ export const products = [
     price: 68,
     quantity : "kg",
     categoryName: "staples",
+    rating : 3,
   },
     {
     _id: uuid(),
@@ -450,6 +504,7 @@ export const products = [
     price: 720,
     quantity : "kg",
     categoryName: "dryfruits",
+    rating : 3,
   },
     {
     _id: uuid(),
@@ -458,6 +513,7 @@ export const products = [
     price: 38,
     quantity : "kg",
     categoryName: "fruits",
+    rating : 5,
   }
   ,
   {
@@ -467,6 +523,7 @@ export const products = [
     price: 500,
     quantity : "250grm",
     categoryName: "dryfruits",
+    rating : 2,
   }  ,
   {
     _id: uuid(),
@@ -475,6 +532,7 @@ export const products = [
     price: 500,
     quantity : "250grm",
     categoryName: "dryfruits",
+    rating : 3,
   },
   {
     _id: uuid(),
@@ -483,6 +541,7 @@ export const products = [
     price: 100,
     quantity : "1kg",
     categoryName: "fruits",
+    rating : 5,
   },
   {
     _id: uuid(),
@@ -491,6 +550,7 @@ export const products = [
     price: 100,
     quantity : "500grms",
     categoryName: "snacks",
+    rating : 3,
   }  ,
   {
     _id: uuid(),
@@ -499,6 +559,7 @@ export const products = [
     price: 40,
     quantity : "packet",
     categoryName: "dairy",
+    rating : 2,
   },
   {
     _id: uuid(),
@@ -507,6 +568,7 @@ export const products = [
     price: 30,
     quantity : "kg",
     categoryName: "vegetables",
+    rating : 1,
   }  ,
   {
     _id: uuid(),
@@ -515,6 +577,7 @@ export const products = [
     price: 100,
     quantity : "250grms",
     categoryName: "sprouts",
+    rating : 2,
   },
   {
     _id: uuid(),
@@ -523,6 +586,7 @@ export const products = [
     price: 250,
     quantity : "500grms",
     categoryName: "dairy",
+    rating : 5,
   }  , 
   {
     _id: uuid(),
@@ -531,6 +595,7 @@ export const products = [
     price: 50,
     quantity : "kg",
     categoryName: "vegetables",
+    rating : 5,
 
   }  ,
   {
@@ -540,6 +605,7 @@ export const products = [
     price: 500,
     quantity : "250grms",
     categoryName: "spices",
+    rating : 4,
   }  ,
   {
     _id: uuid(),
@@ -548,6 +614,7 @@ export const products = [
     price: 100,
     quantity : "500grms",
     categoryName: "staples",
+    rating : 2,
   }  ,
   {
     _id: uuid(),
@@ -556,5 +623,6 @@ export const products = [
     price: 80,
     quantity : "kg",
     categoryName: "staples",
+    rating : 3,
   } 
 ];

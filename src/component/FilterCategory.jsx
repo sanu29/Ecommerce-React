@@ -62,6 +62,23 @@ export function FilterCategory(list, products) {
         })
         filteredprods =filteredprods.reverse()
     }
+    if(list.rating === 1)
+    {
+        filteredprods = filteredprods.filter((prod)=>prod.rating>1)
+    }
+    if(list.rating === 2)
+    {
+        filteredprods = filteredprods.filter((prod)=>prod.rating>2)
+    }
+    if(list.rating === 3)
+    {
+        filteredprods = filteredprods.filter((prod)=>prod.rating>3)
+    }
+    if(list.rating === 4)
+    {
+        filteredprods = filteredprods.filter((prod)=>prod.rating>4)
+    }
+
     return filteredprods;
 
 }
