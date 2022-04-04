@@ -4,7 +4,7 @@ import { useFilterContext } from "../context/filter-context";
 
 export const Filter = () =>{
     const {categories} = useCategoriesContext();
-    // console.log(categories)
+  
     const {state, dispatch} = useFilterContext();
     if(categories === 'loading')
     {
