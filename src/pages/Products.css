@@ -7,7 +7,11 @@
 .card-img-main-product{
     width: 10rem;
     height: 8rem;
+    transition: transform 250ms;
 
+}
+.card-img-main-product:hover{
+   transform: translateY(-10px)
 }
 .product-list{
     list-style: none;
@@ -18,7 +22,7 @@
 }
 .main {
     grid-area: main;
-    margin: 1rem 1rem 2rem 17rem;
+    margin: 5rem 1rem 2rem 17rem;
     /* min-height: 100vh; */
 }
 
@@ -34,7 +38,6 @@
     left: 0;
     top: 3.7rem;
     height: 100%;
-    overflow: scroll;
     z-index: 2;
     margin: 0;
     scroll-behavior: smooth;
@@ -87,4 +90,15 @@
 .addtocart{
     width: 11.75rem;
     margin: 0px;
+}
+
+.sortby{
+    margin: 2rem 0 2rem  0;
+}
+label{
+    cursor: pointer;
+}
+
+label:hover{
+    font-weight: bold;
 }
