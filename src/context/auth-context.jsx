@@ -38,8 +38,9 @@ function AuthContextProvider({children})
                 setLoginStatus(true)
                 setUserDetails(response.data.createdUser)
                 localStorage.setItem("token", response.data.encodedToken); 
-                localStorage.setItem("user", JSON.stringify(user))
-                navigate("/login")
+                localStorage.setItem("user", JSON.stringify(user));
+                navigate("/login");
+                <Navigate replace to="/login"/>     
                
             }
             catch(err)
@@ -60,7 +61,9 @@ const  LoginHandler = async (email,password) =>{
                     setUserDetails(response.data.foundUser)
                     localStorage.setItem("token", response.data.encodedToken); 
                     localStorage.setItem("user", JSON.stringify(user)); 
-                    navigate("/")
+                         navigate("/");
+
+                    <Navigate replace to="/"/>     
                     }
                     else{
                         seterrorDetails("password is Incorrect")
