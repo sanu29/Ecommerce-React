@@ -4,8 +4,8 @@ import { useAuthContext } from "../context/auth-context";
 
 export const LoginBody= ()=>{
 
-    const[email, setEmail] = useState();
-    const [ password, setPassword] = useState();
+    const[email, setEmail] = useState("");
+    const [ password, setPassword] = useState("");
     const {LoginHandler,error,setError} = useAuthContext();
     return(
         <div>
@@ -25,14 +25,16 @@ export const LoginBody= ()=>{
                     <label htmlFor="username" className="para4  m-8 label" >Email Address</label>
                     <input type="email" id="name" className="input border-color-gray margin-none" placeholder="Enter Your Email Id" 
                     onChange={(e)=>{
+
                         setError("noerror")
-                        setEmail(e.target.value)}} value={email}
+                        setEmail(e.target.value)}} onFocus={()=>setError("noerror")} value={email}
                     required/> 
                     <label htmlFor="password" className="para4  m-8 label">Password</label>
                     <input type="password" id="password" className="input border-color-gray margin-none" placeholder="Enter Your Password" 
                      onChange={(e)=>{
+
                         setError("noerror")
-                         setPassword(e.target.value)}} value={password}
+                         setPassword(e.target.value)}} onFocus={()=>setError("noerror")} value={password}
                     required/> 
                     
                  <div className="d-flex align-items-center terms justify-content-between">
@@ -47,9 +49,13 @@ export const LoginBody= ()=>{
                
                  <button type="submit" onClick={(e)=>{
                      e.preventDefault();
-
+                    if(email!="" || password!="")
+                    {
                      LoginHandler(email,password)
-                  
+                    }
+                    else{
+                        setError("Fields Cannot be empty")
+                    }
                  }} className="btn btn-primary w-100 margin-none primary-color-bg" >Submit</button>
                 <Link to={"/signup"} className="justify-self-center align-self-center terms">Create a New Account</Link>
                 </div>

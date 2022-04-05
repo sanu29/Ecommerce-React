@@ -1,16 +1,15 @@
 import { Link } from "react-router-dom"
 import { useState } from "react";
-import { SignupHandler } from "./AuthHandler";
 import { useContext } from "react";
 import { useAuthContext } from "../context/auth-context";
 
 
 export const SignupBody = ()=>{
 
-    const [firstName, setFirstName] = useState()
-    const [lastname, setLastname] = useState()
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
+    const [firstName, setFirstName] = useState("")
+    const [lastname, setLastname] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
     const {isLogin,user,SignupHandler,error, setError} = useAuthContext();
 
     return (
@@ -29,22 +28,38 @@ export const SignupBody = ()=>{
             <label htmlFor="Name" className="para4  m-8 label">FirstName</label>
 
                 <input type="text"   id="firstName" className="input border-color-gray margin-none"
-                    placeholder="Enter Your First Name" onChange={(e)=>setFirstName(e.target.value)} required/>
+                    placeholder="Enter Your First Name" onChange={(e)=>{
+                        setError("noerror")
+                        setFirstName(e.target.value)}} 
+                        onFocus={()=>setError("noerror")}
+                        required/>
 
                      <label htmlFor="lastname" className="para4  m-8 label">LastName</label>
 
                 <input type="text" id="lastName" className="input border-color-gray margin-none"
-                    placeholder="Enter Your Last Name" onChange={(e)=>setLastname(e.target.value)} required/>
+                    placeholder="Enter Your Last Name" onChange={(e)=>{
+                        setError("noerror")
+                        setLastname(e.target.value)} } 
+                        onFocus={()=>setError("noerror")}
+                        required/>
 
                 <label htmlFor="username" className="para4  m-8 label">Email Address</label>
 
                 <input type="email" id="email" className="input border-color-gray margin-none"
-                    placeholder="Enter Your Email Id" onChange={(e)=>setEmail(e.target.value)} required/>
+                    placeholder="Enter Your Email Id" onChange={(e)=>{
+                        setError("noerror")
+                        setEmail(e.target.value)}} 
+                        onFocus={()=>setError("noerror")}
+                        required/>
 
                 <label htmlFor="password" className="para4  m-8 label">Password</label>
 
                 <input type="password" id="password" autoComplete="false" className="input border-color-gray margin-none"
-                    placeholder="Enter Your Password"onChange={(e)=>setPassword(e.target.value)} minLength={8}  required/>
+                    placeholder="Enter Your Password"onChange={(e)=>{
+                        setError("noerror")
+                        setPassword(e.target.value)} }minLength={8}  
+                        onFocus={()=>setError("noerror")}
+                        required/>
 
                 <div className="d-flex align-items-center terms">
                     {/* <div><input type="checkbox" name="number" className="input input-checkbox" value="one" id="one"/></div> */}
@@ -52,8 +67,29 @@ export const SignupBody = ()=>{
                 </div>
                 <button type="submit" onClick={(e)=>{
                         e.preventDefault()
-                SignupHandler(firstName,lastname,email,password)}
-                }
+                        var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+                        if(firstName!==""&&lastname!==""&&email!==""&&password!=="")
+                        {
+                           if(password.length>7)
+                            {
+                                if(email.match(validRegex))
+                                {
+                                         SignupHandler(firstName,lastname,email,password)
+                                         setError("noerror")
+                                }
+                                else{
+                                    setError("Email should be valid")
+                                }
+                            }
+                            else{
+                                setError("Password Should have atleast 8 characters")
+                            }
+                        }
+                        else{
+                            setError("Fileds cannot be empty")
+                        }
+                
+                }}
                      className="btn btn-primary w-100 margin-none primary-color-bg text-align-center" value={"Submit"}>Submit</button>
                 <Link to={"/login"} className="justify-self-center align-self-center terms">Already have an
                     Account</Link>
