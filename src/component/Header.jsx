@@ -1,7 +1,9 @@
 import {Link} from "react-router-dom"
+import { useAuthContext } from "../context/auth-context"
 
 export const Header = () => {
 
+    const {isLogin, setisLogin, user, setUser} = useAuthContext();
 
     return (
         <div
@@ -14,10 +16,16 @@ export const Header = () => {
         </div>
 
 
-        <div className="d-flex-row menu-icons justify-content-around">
-            <Link to={'/login'} className="align-self-center heading-3 btn">Login</Link>
+        <div className="d-flex-row menu-icons justify-content-end">
+
+        {isLogin === true ? 
+        <Link  to={''} onClick={()=>setisLogin(false)} className="align-self-center heading-3 btn">Logout</Link>:
+        <Link  to={'/login'} className="align-self-center heading-3 btn">Login</Link>
+        }  
+            
             <Link to={'/cart'} className="heading-3 margin-8 material-icons header-icon">shopping_cart</Link>
             <Link to={'/wishlist'} className="heading-3 margin-8 material-icons header-icon">favorite</Link>
+            {(isLogin)?<div className="d-flex justify-content-center align-items-center"><Link to={''} className="heading-2  username  ">Hie, {(user.firstName).toUpperCase()}</Link></div>:null}
         </div>
     </div>
 

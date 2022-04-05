@@ -25,7 +25,8 @@ body {
 }
 
 .menu-icons {
-    width: 15rem;
+    width: 25rem;
+    margin-right: 3rem;
 }
 
 .logo {
@@ -56,4 +57,9 @@ body {
     border-top: 1px solid var(--light-gray);
     position: relative;
     
+}
+
+.username{
+   font-size: 1.3rem;
+   margin: 0 4px 0 4px;
 }
