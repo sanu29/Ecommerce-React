@@ -5,6 +5,8 @@ import { Header } from "./component/Header";
 import {BrowserRouter, Routes, Route } from "react-router-dom";
 import {Homepage, ProductListing,Wishlist, Cart } from "./pages/AllPages"
 import MockmanEs from "mockman-js";
+import { Login } from "./pages/Login";
+import { Signup } from "./pages/signup";
 function App() {
   return (
     <div>
@@ -14,8 +16,8 @@ function App() {
             <Route path="/product" element={<ProductListing/>}/>
             <Route path="/wishlist" element={<Wishlist/>}/>
             <Route path="/cart" element={<Cart/>}/>
-            <Route path="/login" element={<Homepage/>}/>
-            <Route path="/signup" element={<Homepage/>}/>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/signup" element={<Signup/>}/>
             <Route path="/mock" element={<MockmanEs/>}/>
           </Routes>
 
