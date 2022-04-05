@@ -74,7 +74,7 @@ const  LoginHandler = async (email,password) =>{
         }
 
     return (
-            <AuthContext.Provider value={{SignupHandler,LoginHandler, isLogin, user, error, setError}}>
+            <AuthContext.Provider value={{SignupHandler,LoginHandler, isLogin, setisLogin, user, error, setError}}>
                              {children}
             </AuthContext.Provider>
    
