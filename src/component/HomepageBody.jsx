@@ -17,7 +17,7 @@ export const HomepageBody = () =>
     }
 else{
     return (
-        <div className="container-main">
+        <div className="container-main home-main">
         <div className="categories d-flex-row flex-wrap justify-content-center side-margin">
         {categories.map((item)=>{
         if(item.id<6) 

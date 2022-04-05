@@ -1,0 +1,23 @@
+.container-light {
+    background-color: var(--white);
+    height: auto;
+    min-width: 10rem;
+    width: 25rem;
+    border: 1px solid var(--light-gray);
+    box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+        0 2px 2px hsl(0deg 0% 0% / 0.075),
+        0 4px 4px hsl(0deg 0% 0% / 0.075),
+        0 8px 8px hsl(0deg 0% 0% / 0.075),
+        0 16px 16px var(--light);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;
+}
+
+.terms {
+    margin: 1.5rem 0;
+}

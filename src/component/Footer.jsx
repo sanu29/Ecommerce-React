@@ -1,4 +1,7 @@
+import { useAuthContext } from "../context/auth-context"
+
 export const Footer = () =>{
+
     return (
         <footer className="footer  d-flex justify-content-around  align-items-center flex-wrap">
         <div className="d-flex-column">
