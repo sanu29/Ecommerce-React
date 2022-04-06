@@ -8,7 +8,9 @@ import MockmanEs from "mockman-js";
 import { Login } from "./pages/Login";
 import { Signup } from "./pages/signup";
 import { PrivateRoute } from "./component/PrivateRoutes";
+import { useAuthContext } from "./context/auth-context";
 function App() {
+  const {isLogin} = useAuthContext
   return (
     <div>
   

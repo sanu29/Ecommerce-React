@@ -9,10 +9,8 @@ export const Header = () => {
     const {wishlist, setWishlist} = UseWishlistContext()
     const navigate = useNavigate();
     const Logout = ()=>{
-   
-        setUser()
-       setisLogin(false);
-
+          setisLogin(false);
+        
     
 }
     return (
@@ -32,7 +30,7 @@ export const Header = () => {
         <Link  to={''} onClick={Logout} className="align-self-center heading-3 btn">Logout</Link>:
         <Link  to={'/login'} className="align-self-center heading-3 btn">Login</Link>
         }  
-            
+             <Link to={'/'} className="heading-3 margin-8 material-icons header-icon">home</Link>
             <Link to={'/cart'} className="heading-3 margin-8 material-icons header-icon">shopping_cart</Link>
         {(wishlist!==null&&wishlist!==undefined&&wishlist!==[]&&wishlist.length>0)?
                <Link to={'/wishlist'} class="position-relative">
