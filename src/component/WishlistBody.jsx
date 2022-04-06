@@ -18,6 +18,8 @@ const {PostWishlist, wishlist} = UseWishlistContext();
         return (
            <div class="wishlist-main">
             <div class="comodities d-flex justify-content-center flex-wrap">
+             
+       
         {wishlist.map((prod,key)=>{
             return (
            <li className="product-list"  key={prod.id} >

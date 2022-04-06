@@ -41,10 +41,10 @@ export const LoginBody= ()=>{
                     <div>
                         <input type="checkbox" name="number" className="input input-checkbox" value="one" id="one"/>
                         <label className="label" htmlFor="one">Remember Me</label></div>
-                    <a href="" className="para4 font-color-info" onClick={()=>{
+                    <div className="para4 font-color-info link" onClick={()=>{
                             setEmail("test@gmail.com")
                             setPassword("tested")
-                    }}>Use Test Credentials</a>
+                    }}>Use Test Credentials</div>
                 </div>   
                
                  <button type="submit" onClick={(e)=>{
