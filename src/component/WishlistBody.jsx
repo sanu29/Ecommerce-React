@@ -1,39 +1,26 @@
-import { Categories, Img } from "./images"
-import { useCategoriesContext } from "../context/categories-context"
-import {ThreeDots} from "react-loader-spinner";
-import {Link} from "react-router-dom";
-import { useProductContext } from "../context/products-context";
-import { useFilterContext } from "../context/filter-context";
-import { FilterCategory } from "./FilterCategory";
-import { useState } from "react";
-import { Rating } from 'react-simple-star-rating'
+import { useContext } from "react"
 import { UseWishlistContext } from "../context/wishlist-context";
+import { Rating } from 'react-simple-star-rating'
 
-export const Products = () =>{
-    let {products} = useProductContext()
-    const {state, dispatch} = useFilterContext();
-    const [res, setRes] = useState()
-    const {PostWishlist, wishlist} = UseWishlistContext();
-        
-    if(products === 'loading')
+
+export const WishlistBody= () =>{
+
+const {PostWishlist, wishlist} = UseWishlistContext();
+
+    if(wishlist === "" || wishlist === undefined)
     {
-            return <ThreeDots color="#2BAD60" height="100" width="100" /> 
-    }
-    else{
 
-     
-       let filteredprods  = FilterCategory(state,products)
-       if(state.hightolow === false && state.lowtohigh ===false)
-       {
-        filteredprods = filteredprods.sort((a,b)=>{
-                 return a.id - b.id
-            })}
     return (
-        <>         
-            <div className="main-products">
-             <div className="comodities d-flex justify-content-around flex-wrap">
-                 {filteredprods.map((prod,key)=>{
-                    return (<li className="product-list"  key={prod.id} >
+        <div className="main-products">
+    <h1>Nothing In the Wishlist Yet</h1>
+    </div>)}
+    else{
+        return (
+           <div class="wishlist-main">
+            <div class="comodities d-flex justify-content-center flex-wrap">
+        {wishlist.map((prod,key)=>{
+            return (
+           <li className="product-list"  key={prod.id} >
                     <div className="card card-product border-radius-sm margin-8 d-flex justify-center align-items-center">
                     <div className="position-relative">
                         <img className="card-img-main card-img-main-product border-radius-sm margin-16 "
@@ -67,12 +54,7 @@ export const Products = () =>{
                         </div>
                     </div>
                 </div>
-                    </li>)
-                 
-                 })}
-                 
-                 </div>
-                 </div>
-             </>
-    )}
-}
+                    </li>)})}
+        </div></div>)
+        }
+    }

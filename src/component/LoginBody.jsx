@@ -30,7 +30,7 @@ export const LoginBody= ()=>{
                         setEmail(e.target.value)}} onFocus={()=>setError("noerror")} value={email}
                     required/> 
                     <label htmlFor="password" className="para4  m-8 label">Password</label>
-                    <input type="password" id="password" className="input border-color-gray margin-none" placeholder="Enter Your Password" 
+                    <input type="password" id="password" className="input border-color-gray margin-none" placeholder="Enter Your Password" autoComplete="false"
                      onChange={(e)=>{
 
                         setError("noerror")

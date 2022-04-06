@@ -21,7 +21,7 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
    width: 12rem;
 }
-.main {
+.main-products {
     grid-area: main;
     margin: 5rem 1rem 2rem 17rem;
 
@@ -115,4 +115,11 @@ label:hover{
     font-size: 5px;
 
 
+}
+.addtocart{
+    width: 15rem;
+}
+.wish{
+    width: 39px;
+    margin-left: 20px ;
 }

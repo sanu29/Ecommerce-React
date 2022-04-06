@@ -1,6 +1,18 @@
+import { Header, Footer } from "../component/AllComponents"
+import "../App.css"
+import "./WishList.css"
+import { WishlistBody } from "../component/WishlistBody"
 export const Wishlist = () => 
 {
+
     return (
-        <h2>WishList</h2>
+      
+        <div>
+              <Header/>
+              
+            <WishlistBody/>
+            
+            <Footer/>
+        </div>
     )
 }
