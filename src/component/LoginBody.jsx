@@ -30,7 +30,7 @@ export const LoginBody= ()=>{
                         setEmail(e.target.value)}} onFocus={()=>setError("noerror")} value={email}
                     required/> 
                     <label htmlFor="password" className="para4  m-8 label">Password</label>
-                    <input type="password" id="password" className="input border-color-gray margin-none" placeholder="Enter Your Password" 
+                    <input type="password" id="password" className="input border-color-gray margin-none" placeholder="Enter Your Password" autoComplete="false"
                      onChange={(e)=>{
 
                         setError("noerror")
@@ -41,10 +41,10 @@ export const LoginBody= ()=>{
                     <div>
                         <input type="checkbox" name="number" className="input input-checkbox" value="one" id="one"/>
                         <label className="label" htmlFor="one">Remember Me</label></div>
-                    <a href="" className="para4 font-color-info" onClick={()=>{
+                    <div className="para4 font-color-info link" onClick={()=>{
                             setEmail("test@gmail.com")
                             setPassword("tested")
-                    }}>Use Test Credentials</a>
+                    }}>Use Test Credentials</div>
                 </div>   
                
                  <button type="submit" onClick={(e)=>{
