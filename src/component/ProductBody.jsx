@@ -8,13 +8,56 @@ import { FilterCategory } from "./FilterCategory";
 import { useState } from "react";
 import { Rating } from 'react-simple-star-rating'
 import { UseWishlistContext } from "../context/wishlist-context";
+import { useCartContext } from "../context/cart-context";
+
+
 
 export const Products = () =>{
     let {products} = useProductContext()
     const {state, dispatch} = useFilterContext();
     const [res, setRes] = useState()
     const {PostWishlist, wishlist} = UseWishlistContext();
-        
+    const {PostCart, DeleteCart , cart, UpdateQuantity } = useCartContext()
+
+    const AddToCartButton = (prod,key)=>{
+        return(
+            <div  key={key}  className="btn border-radius-sm btn-primary w-100 margin-none text-align-center addtocart w-100"
+            onClick={()=>{
+                PostCart(prod)
+            }}
+            >                    
+            Add to cart
+            </div>
+        )
+    }
+      const QuantityButton = (prod,key) =>{
+
+        const cartIndex = cart.findIndex((c)=>c._id === prod._id)
+    
+        return (
+            <div
+            class="d-flex-row justify-content-center align-items-center border-1 border-color-gray padding-none addtocart btn border-radius-sm">
+    
+            <button class="quantity-btn btn btn-primary margin-none w-100" onClick={(e)=>{
+                console.log(cart[cartIndex].qty)
+                if(cart[cartIndex].qty>1)
+                {
+                   UpdateQuantity(prod,'decrement')
+                }
+                else
+                {
+                    DeleteCart(prod)
+                }
+            }}> - </button>
+            <input type="text" value={cart[cartIndex].qty} class="quantity-input" disabled/>
+            <button class="quantity-btn btn btn-primary margin-none w-100"
+             onClick={()=>{
+                UpdateQuantity(prod,'increment')
+            }}> + </button>
+    
+        </div>
+        )
+    }
     if(products === 'loading')
     {
             return <ThreeDots color="#2BAD60" height="100" width="100" /> 
@@ -53,7 +96,7 @@ export const Products = () =>{
                                 }}
                             >
                                 
-                                {wishlist!==""?(wishlist.findIndex((item)=>item.id === prod.id))!==-1?'favorite':'favorite_outlined':'favorite_outlined'}</i>
+                                {(wishlist!=="")?(wishlist.findIndex((item)=>item.id === prod.id))!==-1?'favorite':'favorite_outlined':'favorite_outlined'}</i>
 
                     </div>
                     <div className="card-primary">
@@ -63,8 +106,10 @@ export const Products = () =>{
                     </div>
 
                     <div className="card-action">
-                        <div  key={key}  className="btn border-radius-sm btn-primary w-100 margin-none text-align-center addtocart w-100"> Add to cart
-                        </div>
+                    
+                         {(cart!==""&&cart!==undefined)?(cart.findIndex((item)=>item.id === prod.id))!==-1?QuantityButton(prod,key):AddToCartButton(prod,key):AddToCartButton(prod,key)}
+                       
+                      
                     </div>
                 </div>
                     </li>)

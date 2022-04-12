@@ -1,11 +1,11 @@
 .card-product {
-    width: 12rem;
+    width: 9rem;
     margin:1rem ;
     margin-bottom: 0px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .card-img-main-product{
-    width: 10rem;
+    width: 8rem;
     height: 8rem;
     transition: transform 250ms;
     margin-top:3rem;
@@ -23,22 +23,22 @@
 }
 .main-products {
     grid-area: main;
-    margin: 5rem 1rem 2rem 17rem;
+    margin: 5rem 1rem 2rem 13rem;
 
 }
 
 .nav {
     grid-area: nav;
-    width: 16rem;
+    width: 13rem;
     padding: 0 2rem;
     background-color: var(--secondary-nav-color);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     display: flex;
     font-family: 'Inter', sans-serif;
     position: absolute;
     left: 0;
     top: 3.7rem;
-    height: 100%;
+    height: fit-content;
     z-index: 2;
     margin: 0;
     scroll-behavior: smooth;
@@ -122,4 +122,25 @@ label:hover{
 .wish{
     width: 39px;
     margin-left: 20px ;
+}
+.wish:hover{
+    background-color: white;
+    box-shadow: none;
+    color: red;
+}
+.quantity-input {
+    width: 2rem;
+    height: 2rem;
+    border: none;
+}
+
+.quantity-btn {
+    height: 2.4rem;
+    width: 100%;
+    border: none;
+    margin: none;
+}
+
+.quantity-btn:hover {
+    font-size: 1.5rem;
 }
