@@ -70,7 +70,7 @@ export const CartBody = () =>{
                                         DeleteCart(item)
                                     }}
                                     >
-                                    Add to Wishlist</div>
+                                    Move to Wishlist</div>
                                 <div class="btn margin-none border-radius-sm w-100 text-align-center "
                                     onClick={()=>{
                                         DeleteCart(item)
