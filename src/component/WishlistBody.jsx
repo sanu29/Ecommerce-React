@@ -1,12 +1,13 @@
 import { useContext } from "react"
 import { UseWishlistContext } from "../context/wishlist-context";
 import { Rating } from 'react-simple-star-rating'
+import { useCartContext } from "../context/cart-context";
 
 
 export const WishlistBody= () =>{
 
-const {PostWishlist, wishlist} = UseWishlistContext();
-
+const {PostWishlist,  wishlist} = UseWishlistContext();
+const {PostCart} = useCartContext();
     if(wishlist === "" || wishlist === undefined)
     {
 
@@ -52,7 +53,13 @@ const {PostWishlist, wishlist} = UseWishlistContext();
                     </div>
 
                     <div className="card-action">
-                        <div  key={key}  className="btn border-radius-sm btn-primary w-100 margin-none text-align-center addtocart w-100"> Add to cart
+                        <div  key={key}  className="btn border-radius-sm btn-primary w-100 margin-none text-align-center addtocart w-100"
+                            onClick={()=>{
+                                    PostWishlist(prod,key)
+                                    PostCart(prod)
+
+                            }}
+                        > Move to cart
                         </div>
                     </div>
                 </div>
