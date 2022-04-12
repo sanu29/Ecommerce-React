@@ -38,7 +38,7 @@ export const Header = () => {
                         <span className="heading-3 margin-8 material-icons header-icon">shopping_cart</span>
                      <div class=" badge-buzy badge-icon position-absolute wishlist-notification"></div>
                  </Link>
-    : <Link to={'/wishlist'} className="heading-3 margin-8 material-icons header-icon">shopping_cart</Link>}
+    : <Link to={'/cart'} className="heading-3 margin-8 material-icons header-icon">shopping_cart</Link>}
     
 
 
