@@ -66,7 +66,6 @@ export const CartBody = () =>{
                                     class="btn border-radius-sm bg-gray font-color-white w-100  text-align-center margin-none margin-top addtocart"
                                     onClick={()=>{
                                         const isInWishlist = wishlist.findIndex((prod)=>prod.id === item.id)
-                                        console.log(isInWishlist)
                                         PostWishlist(item,isInWishlist)
                                         DeleteCart(item)
                                     }}

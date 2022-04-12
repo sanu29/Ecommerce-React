@@ -47,12 +47,11 @@ function WishlistContextProvider({children})
                          }
 
                         )
-                        console.log(response.data)
+                        
                         setWishlist(response.data.wishlist)
                     } catch(err)
                     {
-                        console.log(err.response.data)
-                    }}
+                                            }}
                     else{
                         try{const response =await axios({
                             method: 'delete',
@@ -63,7 +62,7 @@ function WishlistContextProvider({children})
                             setWishlist(response.data.wishlist)
                     }catch(err)
                     {
-                        console.log(err.response.data)
+                       
                     }}
                 }
       

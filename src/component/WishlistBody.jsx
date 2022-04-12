@@ -32,12 +32,12 @@ const {PostWishlist, wishlist} = UseWishlistContext();
                        
                         <i
                             className="material-icons btn btn-icon  position-absolute card-icon-dismiss btn-danger-outline wish"
-                            // style={(wishlist.findIndex((item)=>item.id === prod.id))===-1?{color:'white'}:{color:'red'}}
+                         
                             
                             onClick={()=>{
 
                                 const isInWishlist = wishlist.findIndex((item)=>item.id === prod.id)
-                                console.log(isInWishlist)
+                               
                                 PostWishlist(prod,isInWishlist)
                                 }}
                             >

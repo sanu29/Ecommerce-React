@@ -1,6 +1,6 @@
  export function FilterFunction (state,action) 
 {
-    console.log("indispatch")
+   
        switch(action.type)
     {
         case 'dairy': 

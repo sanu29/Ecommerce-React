@@ -26,7 +26,7 @@ function CartContextProvider({children})
 
     const UpdateQuantity = async(prod,type)=>
     {
-        console.log("in update req")
+       
                 try{
                     const response = await axios({
                     method: 'post',
@@ -42,12 +42,12 @@ function CartContextProvider({children})
                 }
 
                 )
-                console.log(response)
+             
                 setCart(response.data.cart)
-                console.log(prod)
+              
             } catch(err)
             {
-                console.log(err.response.data)
+                
             }
     }
     const DeleteCart = async (prod) =>{
@@ -56,7 +56,7 @@ function CartContextProvider({children})
 
             const encodedToken = localStorage.getItem('token')
             
-            console.log("indetele")
+           
                    
                         try{
                             
@@ -69,12 +69,12 @@ function CartContextProvider({children})
                          }
 
                         )
-                         console.log(response.data.cart)
+                       
                         setCart(response.data.cart)
 
                     } catch(err)
                     {
-                        console.log(err.response.data)
+                        
                     }
 
     }}
@@ -105,7 +105,6 @@ function CartContextProvider({children})
 
                     } catch(err)
                     {
-                        console.log(err.response.data)
                     }
         }
       

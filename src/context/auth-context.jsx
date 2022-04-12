@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { useReducer } from "react/cjs/react.production.min";
 
 
 const AuthContext = createContext();
@@ -29,6 +30,8 @@ function AuthContextProvider({children})
         setError(error)
     })
     
+ 
+
     const Logout = ()=>{
 
         setisLogin(false);
@@ -71,6 +74,7 @@ const  LoginHandler = async (email,password) =>{
                     setUserDetails(response.data.foundUser)
                     localStorage.setItem("token", response.data.encodedToken); 
                     localStorage.setItem("user", JSON.stringify(response.data.foundUser)); 
+                    localStorage.setItem("password",password); 
 
                          navigate("/");
 

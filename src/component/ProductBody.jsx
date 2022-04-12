@@ -39,7 +39,7 @@ export const Products = () =>{
             class="d-flex-row justify-content-center align-items-center border-1 border-color-gray padding-none addtocart btn border-radius-sm">
     
             <button class="quantity-btn btn btn-primary margin-none w-100" onClick={(e)=>{
-                console.log(cart[cartIndex].qty)
+               
                 if(cart[cartIndex].qty>1)
                 {
                    UpdateQuantity(prod,'decrement')
@@ -86,12 +86,12 @@ export const Products = () =>{
                        
                         <i
                             className="material-icons btn btn-icon  position-absolute card-icon-dismiss btn-danger-outline wish"
-                            // style={(wishlist.findIndex((item)=>item.id === prod.id))===-1?{color:'white'}:{color:'red'}}
+                           
                             
                             onClick={()=>{
 
                                 const isInWishlist = wishlist.findIndex((item)=>item.id === prod.id)
-                                console.log(isInWishlist)
+                             
                                 PostWishlist(prod,isInWishlist)
                                 }}
                             >
