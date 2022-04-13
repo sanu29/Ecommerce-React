@@ -3,6 +3,10 @@ import { createContext } from "react";
 import { useContext } from "react";
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useReducer } from "react/cjs/react.production.min";
+import { UseWishlistContext } from "./wishlist-context";
+import { useCartContext } from "./cart-context";
 
 
 const AuthContext = createContext();
@@ -10,6 +14,7 @@ const useAuthContext =()=> useContext(AuthContext)
 
 function AuthContextProvider({children})
 {
+
     const navigate = useNavigate();
     const [isLogin, setisLogin] = useState(false);
     const setLoginStatus= ((status)=>
@@ -28,6 +33,16 @@ function AuthContextProvider({children})
         setError(error)
     })
     
+ 
+
+    const Logout = ()=>{
+
+        
+        localStorage.clear();
+        setisLogin(false);
+
+
+        }
  const  SignupHandler = async (firstName,lastName,email,password) =>{
 
          
@@ -62,7 +77,8 @@ const  LoginHandler = async (email,password) =>{
                     setLoginStatus(true)
                     setUserDetails(response.data.foundUser)
                     localStorage.setItem("token", response.data.encodedToken); 
-                    localStorage.setItem("user", JSON.stringify(user)); 
+                    localStorage.setItem("user", JSON.stringify(response.data.foundUser)); 
+                    localStorage.setItem("password",password); 
 
                          navigate("/");
 
@@ -79,8 +95,10 @@ const  LoginHandler = async (email,password) =>{
             }
         }
 
+
+    
     return (
-            <AuthContext.Provider value={{SignupHandler,LoginHandler, isLogin, setisLogin, user, error, setError}}>
+            <AuthContext.Provider value={{SignupHandler,LoginHandler,Logout, isLogin, setisLogin, user, error, setError}}>
                              {children}
             </AuthContext.Provider>
    

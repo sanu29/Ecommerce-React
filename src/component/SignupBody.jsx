@@ -15,9 +15,9 @@ export const SignupBody = ()=>{
     return (
 
         <form>
-    <div className="container ">
+    <div className="d-flex justify-content-center auth-main ">
         <div className="container-light d-flex-column align-items-center  border-radius-md">
-            <div className="terms heading2 text-color-light-black text-primary font-weight-bolder">Signup</div>
+            <div className="terms margin-16 heading2 text-color-light-black text-primary font-weight-bolder">Signup</div>
             <div className="d-flex-column w-75 margin-16 ">
             <div>
                 {error!=="noerror"?
@@ -25,7 +25,7 @@ export const SignupBody = ()=>{
                 <div className="alert-text font-color-danger">{error}</div></div>
                 :<h2></h2>}
             </div>
-            <label htmlFor="Name" className="para4  m-8 label">FirstName</label>
+            <label htmlFor="Name" className="para5  m-8 label">FirstName</label>
 
                 <input type="text"   id="firstName" className="input border-color-gray margin-none"
                     placeholder="Enter Your First Name" onChange={(e)=>{
@@ -34,7 +34,7 @@ export const SignupBody = ()=>{
                         onFocus={()=>setError("noerror")}
                         required/>
 
-                     <label htmlFor="lastname" className="para4  m-8 label">LastName</label>
+                     <label htmlFor="lastname" className="para5  m-8 label">LastName</label>
 
                 <input type="text" id="lastName" className="input border-color-gray margin-none"
                     placeholder="Enter Your Last Name" onChange={(e)=>{
@@ -43,7 +43,7 @@ export const SignupBody = ()=>{
                         onFocus={()=>setError("noerror")}
                         required/>
 
-                <label htmlFor="username" className="para4  m-8 label">Email Address</label>
+                <label htmlFor="username" className="para5  m-8 label">Email Address</label>
 
                 <input type="email" id="email" className="input border-color-gray margin-none"
                     placeholder="Enter Your Email Id" onChange={(e)=>{
@@ -52,7 +52,7 @@ export const SignupBody = ()=>{
                         onFocus={()=>setError("noerror")}
                         required/>
 
-                <label htmlFor="password" className="para4  m-8 label">Password</label>
+                <label htmlFor="password" className="para5  m-8 label">Password</label>
 
                 <input type="password" id="password" autoComplete="false" className="input border-color-gray margin-none"
                     placeholder="Enter Your Password"onChange={(e)=>{

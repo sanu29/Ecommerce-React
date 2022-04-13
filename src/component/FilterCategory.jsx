@@ -52,7 +52,7 @@ export function FilterCategory(list, products) {
         filteredprods = filteredprods.sort((a,b)=>{
             return a.price - b.price
         })
-        console.log(filteredprods)
+        
 
     }
     if(list.hightolow === true)
