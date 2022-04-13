@@ -4,7 +4,6 @@ import { UseWishlistContext } from "../context/wishlist-context";
 export const CartBody = () =>{
     const {PostCart, DeleteCart , cart, UpdateQuantity } = useCartContext()
     const {PostWishlist, wishlist} = UseWishlistContext();
-    console.log(cart)
     if(cart === [] || cart === "" || cart === undefined|| cart.length <1)
     {
         return (

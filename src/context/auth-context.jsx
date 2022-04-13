@@ -5,6 +5,8 @@ import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useReducer } from "react/cjs/react.production.min";
+import { UseWishlistContext } from "./wishlist-context";
+import { useCartContext } from "./cart-context";
 
 
 const AuthContext = createContext();
@@ -12,6 +14,7 @@ const useAuthContext =()=> useContext(AuthContext)
 
 function AuthContextProvider({children})
 {
+
     const navigate = useNavigate();
     const [isLogin, setisLogin] = useState(false);
     const setLoginStatus= ((status)=>
@@ -34,10 +37,11 @@ function AuthContextProvider({children})
 
     const Logout = ()=>{
 
-        setisLogin(false);
+        
         localStorage.clear();
-        navigate("/");
-        <Navigate replace to="/"/>    
+        setisLogin(false);
+
+
         }
  const  SignupHandler = async (firstName,lastName,email,password) =>{
 

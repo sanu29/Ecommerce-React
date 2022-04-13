@@ -9,7 +9,7 @@ const useCartContext = () => useContext(CartContext)
 function CartContextProvider({children})
 {
 
-    const [cart, setCart] = useState()
+    const [cart, setCart] = useState("")
     const {isLogin, user} = useAuthContext();
     const navigate = useNavigate()
 

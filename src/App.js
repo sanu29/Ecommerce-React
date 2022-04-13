@@ -9,6 +9,7 @@ import { Login } from "./pages/Login";
 import { Signup } from "./pages/signup";
 import { PrivateRoute } from "./component/PrivateRoutes";
 import { useAuthContext } from "./context/auth-context";
+import { NotFound } from "./pages/NotFound";
 function App() {
   const {isLogin} = useAuthContext
   return (
@@ -24,6 +25,8 @@ function App() {
             <Route path="/login" element={<Login/>}/>
             <Route path="/signup" element={<Signup/>}/>
             <Route path="/mock" element={<MockmanEs/>}/>
+            <Route path="/*" element={<NotFound/>}/>
+
           </Routes>
 
     </div>

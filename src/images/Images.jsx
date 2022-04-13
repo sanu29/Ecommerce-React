@@ -68,7 +68,7 @@ import chickenKheema from "./chickenKheema.jfif"
 import chicken from "./chicken.jfif"
 import eggs from "./eggs.webp"
 import chickendrum from "./chickendrum.webp"
-
+import notfound from "./notfound.svg"
 
 export {almonds, anjeer, apple, banana, bananachips,bread,bringal,brownchana,butter,capsicum
         , cardamom,chana,chanadal,chashew,cheese,cheeseballs,chicken,chickenKheema,chickendrum
@@ -77,4 +77,4 @@ export {almonds, anjeer, apple, banana, bananachips,bread,bringal,brownchana,but
     ,matki,milk,mixdal,mixedsprouts,momos,moong,moongdal,moongsprout,Nachos,nuggets
     ,oats,onion,orange,paneermasala,pav,pavbhajimasala,peanuts
     ,pista,pomegranate,potato,puff,rajma,rasins,redcapsicum,redchilipowder
-    ,strawberry,sweetlime,tomatoes,turmeric,urad,walnut,watermellon} 
+    ,strawberry,sweetlime,tomatoes,turmeric,urad,walnut,watermellon,notfound} 

@@ -9,7 +9,7 @@ export const Header = () => {
     const {isLogin, setisLogin, user, setUser, Logout} = useAuthContext();
     const {wishlist, setWishlist} = UseWishlistContext()
     const navigate = useNavigate();
-    const {cart, setcart} = useCartContext()
+    const {cart, setCart} = useCartContext()
         
     
 
@@ -27,7 +27,9 @@ export const Header = () => {
         <div className="d-flex-row menu-icons justify-content-end">
 
         {isLogin === true ? 
-        <Link  to={''} onClick={Logout} className="align-self-center heading-3 btn">Logout</Link>:
+        <Link  to={'/'} onClick={()=>{
+            Logout()
+        }} className="align-self-center heading-3 btn">Logout</Link>:
         <Link  to={'/login'} className="align-self-center heading-3 btn">Login</Link>
         }  
              <Link to={'/'} className="heading-3 margin-8 material-icons header-icon">home</Link>
