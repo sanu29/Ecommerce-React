@@ -18,8 +18,9 @@ const {PostCart} = useCartContext();
     else{
         return (
            <div class="wishlist-main">
+            <div className="font-color-primary heading2 position-absolute">Wishlist</div>
             <div class="comodities d-flex justify-content-center flex-wrap">
-             
+
        
         {wishlist.map((prod,key)=>{
             return (

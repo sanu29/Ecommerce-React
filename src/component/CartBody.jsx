@@ -1,6 +1,7 @@
 import { useCartContext } from "../context/cart-context"
 import "../pages/cart.css"
 import { UseWishlistContext } from "../context/wishlist-context";
+import { Link } from "react-router-dom";
 export const CartBody = () =>{
     const {PostCart, DeleteCart , cart, UpdateQuantity } = useCartContext()
     const {PostWishlist, wishlist} = UseWishlistContext();
@@ -116,6 +117,7 @@ export const CartBody = () =>{
                         
                     </table>
                     <div class="btn btn-primary w-100 text-align-center margin-none">Proceed to Checkout</div>
+                    <Link to={"/product"} class="btn btn-primary w-100 text-align-center margin-none">Shop More</Link>
                 </div>
                   
                   </div>
