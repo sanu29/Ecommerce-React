@@ -1,7 +1,7 @@
 import { Categories, Img } from "./images"
 import { useCategoriesContext } from "../context/categories-context"
 import {ThreeDots} from "react-loader-spinner";
-import {Link} from "react-router-dom";
+import {Link, Navigate, useNavigate} from "react-router-dom";
 import { useProductContext } from "../context/products-context";
 import { useFilterContext } from "../context/filter-context";
 import { FilterCategory } from "./FilterCategory";
@@ -9,10 +9,12 @@ import { useState } from "react";
 import { Rating } from 'react-simple-star-rating'
 import { UseWishlistContext } from "../context/wishlist-context";
 import { useCartContext } from "../context/cart-context";
+import { useAuthContext } from "../context/auth-context";
 
 
 
 export const Products = () =>{
+    const {isLogin} = useAuthContext();
     let {products} = useProductContext()
     const {state, dispatch} = useFilterContext();
     const [res, setRes] = useState()
@@ -89,9 +91,16 @@ export const Products = () =>{
                            
                             
                             onClick={()=>{
-
-                                const isInWishlist = wishlist.findIndex((item)=>item.id === prod.id)
-                             
+                                let isInWishlist = -1
+                                if(!isLogin)
+                                {
+                                     isInWishlist = -1
+                                    
+                                }
+                                else{
+                                     isInWishlist = wishlist.findIndex((item)=>item.id === prod.id)
+                                   
+                                }
                                 PostWishlist(prod,isInWishlist)
                                 }}
                             >
