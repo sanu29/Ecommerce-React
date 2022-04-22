@@ -97,11 +97,11 @@ else{
 
 
 
-  <div className="margin-top d-flex-column justify-content-center align-items-center">
+  <div className="margin-top d-flex-column justify-content-center align-items-center w-100 features">
 
     <h1 className="heading2 margin-bottom text-primary">Our Features</h1>
 
-    <div className="d-flex justify-content-center align-items-center responsive-image flex-wrap ">
+    <div className="d-flex justify-content-center align-items-center responsive-image flex-wrap w-100 ">
 
       {<img src="https://instantgrocery.netlify.app/assets/images/feat.png" className="width-100" alt="features" srcSet="" /> }
     </div>

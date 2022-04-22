@@ -16,16 +16,57 @@ export const Header = () => {
     const {cart, setCart} = useCartContext()
     const [search, setSearch] =  useState("")
     const {categories} = useCategoriesContext();
-  
+    const [displayOptions, setDisplayOptions] = useState("none")
+
+    const profileOptions = () =>{
+        return(
+            <div className="d-flex justify-content-center align-items-center position-relative ">
+                <div className="heading-2 d-flex justify-content-center align-items-center username  "
+                    onClick= {(e)=>{
+                        if(displayOptions==="none")
+                        {
+                            setDisplayOptions("block")
+                        }
+                        else{
+                            setDisplayOptions("none")
+                        }
+                    }}
+                >
+                    {(user.firstName).toUpperCase()}
+                    <span class="material-icons">
+                        expand_more
+                        </span>
+                    </div>
+                    <div className="d-flex-cols bg-white position-absolute options font-color-dark " style={{display:displayOptions}}>
+                    <div className="option">Profile</div>
+                    <div  className="option flex-option"><Link to={'/cart'} class="position-relative">Cart</Link></div>    
+                    <div  className="option  flex-option"><Link to={'/wishlist'} class="position-relative">Wishlist</Link></div>    
+                    <div  className="option  flex-option">
+                    <Link to={'/'} class="position-relative">Home</Link>
+                        </div>    
+                    <div  className="option  flex-option">
+                                    {isLogin === true ? 
+                                        <Link  to={'/'} onClick={()=>{Logout()}} className="align-self-center heading-3 ">Logout</Link>:
+                                       <Link  to={'/login'} className="align-self-center heading-3 ">Login</Link>
+                                   }     
+                     </div> 
+                       
+                </div>
+                </div>
+        )
+    }
 
     return (
         <div
-        className="header-simple bg-primary d-flex-row border-radius-none padding-none margin-none justify-content-between">
+        className="header-simple bg-primary d-flex-row border-radius-none padding-none  margin-none justify-content-between">
 
         <Link to={'/'}  className="logo">Instant-Grocery</Link>
-        <div className="d-flex align-items-center text-primary border-color-gray border-radius-sm overflow-hidden search">
-            <input type="text" className="input-sm box-shadow-none margin-none search" onChange={(e)=>setSearch(e.target.value)} placeholder="Seacrh..."/>
-            <Link to={'/product'} className="material-icons align-self-center bg-white padding-4 text-color-primary"
+        <div className="d-flex align-items-center text-primary border-color-gray w-100  border-radius-sm overflow-hidden search justify-content-between">
+            <input type="text" className="input-sm box-shadow-none margin-none search w-100" onChange={(e)=>setSearch(e.target.value)} placeholder="Seacrh..."/>
+           
+           
+           
+            <Link to={'/product'} className="material-icons align-self-center bg-white padding-4 text-color-primary fixed-width"
             onClick={()=>{
                 categories.map((item)=>{
                     dispatch({type:item.categoryName, payload:true})
@@ -37,14 +78,17 @@ export const Header = () => {
         </div>
 
 
-        <div className="d-flex-row menu-icons justify-content-end">
-
+        <div className="d-flex-row menu-icons justify-content-end ">
+        <div className={isLogin?"d-flex-row justify-content-end flex-menu-icons":"d-flex-row  justify-content-end "}>
         {isLogin === true ? 
         <Link  to={'/'} onClick={()=>{
             Logout()
         }} className="align-self-center heading-3 btn">Logout</Link>:
         <Link  to={'/login'} className="align-self-center heading-3 btn">Login</Link>
         }  
+
+
+
              <Link to={'/'} className="heading-3 margin-8 material-icons header-icon">home</Link>
             
 
@@ -64,8 +108,9 @@ export const Header = () => {
                  </Link>
     : <Link to={'/wishlist'} className="heading-3 margin-8 material-icons header-icon">favorite</Link>}
            
-            
-            {(isLogin)?<div className="d-flex justify-content-center align-items-center"><Link to={''} className="heading-2  username  ">Hie, {(user.firstName).toUpperCase()}</Link></div>:null}
+           </div>
+            {(isLogin)?profileOptions():null}
+
         </div>
     </div>
 

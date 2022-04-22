@@ -15,7 +15,7 @@ export const Filter = () =>{
     }
 return (     
     
-    <div className="nav">
+    <div className="nav filter">
         
     <div className=" d-flex  text-primary border-color-gray w-100" id="navbar">
     <ul className="ul-list component-list padding-none w-100">
