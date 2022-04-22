@@ -38,7 +38,7 @@ export const Header = () => {
                         </span>
                     </div>
                     <div className="d-flex-cols bg-white position-absolute options font-color-dark " style={{display:displayOptions}}>
-                    <div className="option">Profile</div>
+                    <div className="option"><Link to={'/profile'} class="position-relative">Profile</Link></div>
                     <div  className="option flex-option"><Link to={'/cart'} class="position-relative">Cart</Link></div>    
                     <div  className="option  flex-option"><Link to={'/wishlist'} class="position-relative">Wishlist</Link></div>    
                     <div  className="option  flex-option">
