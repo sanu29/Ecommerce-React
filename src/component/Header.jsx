@@ -4,14 +4,19 @@ import { UseWishlistContext } from "../context/wishlist-context";
 import { Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useCartContext } from "../context/cart-context";
-export const Header = () => {
+import { useState } from "react";
+import { useFilterContext } from "../context/filter-context";
+import { useCategoriesContext } from "../context/categories-context";
 
+export const Header = () => {
+    const {state, dispatch} = useFilterContext();
     const {isLogin, setisLogin, user, setUser, Logout} = useAuthContext();
     const {wishlist, setWishlist} = UseWishlistContext()
     const navigate = useNavigate();
     const {cart, setCart} = useCartContext()
-        
-    
+    const [search, setSearch] =  useState("")
+    const {categories} = useCategoriesContext();
+  
 
     return (
         <div
@@ -19,8 +24,16 @@ export const Header = () => {
 
         <Link to={'/'}  className="logo">Instant-Grocery</Link>
         <div className="d-flex align-items-center text-primary border-color-gray border-radius-sm overflow-hidden search">
-            <input type="text" className="input-sm box-shadow-none margin-none search" placeholder="Seacrh..."/>
-            <div className="material-icons align-self-center bg-white padding-4 text-color-primary">search</div>
+            <input type="text" className="input-sm box-shadow-none margin-none search" onChange={(e)=>setSearch(e.target.value)} placeholder="Seacrh..."/>
+            <Link to={'/product'} className="material-icons align-self-center bg-white padding-4 text-color-primary"
+            onClick={()=>{
+                categories.map((item)=>{
+                    dispatch({type:item.categoryName, payload:true})
+                   })
+                     dispatch({type:'search', payload:search})
+
+            }}
+            >search</Link>
         </div>
 
 
