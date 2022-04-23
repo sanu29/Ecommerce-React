@@ -10,6 +10,7 @@ import { FilterContextProvider } from "./context/filter-context";
 import { AuthContextProvider } from "./context/auth-context";
 import { WishlistContextProvider } from "./context/wishlist-context";
 import { CartContextProvider } from "./context/cart-context";
+import { AddrressContextProvider } from "./context/address-context";
 // Call make Server
 makeServer();
 
@@ -22,8 +23,9 @@ ReactDOM.render(
      <ProductContextProvider>  
        <FilterContextProvider>
         <CategoriesContextProvider>
-
+        <AddrressContextProvider>
         <App />
+        </AddrressContextProvider>
         </CategoriesContextProvider>
         </FilterContextProvider>
         </ProductContextProvider>

@@ -1,22 +1,19 @@
-import { Link } from "react-router-dom"
+import { AddressBody } from "../component/AddressBody";
 import { Footer } from "../component/Footer"
 import { Header } from "../component/Header"
-import "./profile.css"
 import { ProfileSideBar } from "../component/ProfileSideBar"
-import { useAuthContext } from "../context/auth-context"
-import { ProfileBody } from "../component/ProfileBody"
+import { useAuthContext } from "../context/auth-context";
 
-export const Profile =()=>{
+export const Address = () =>{
     const {isLogin, setisLogin, user, setUser, Logout} = useAuthContext();
-    return <>
+    return(
+        <>
     <Header/>
     <div className="profile-contianer">       
     <ProfileSideBar/>
-    {ProfileBody(user)}
+    <AddressBody/>
       </div>
     <Footer/>
-    </>;
+    </>
+        )
 }
-
-
-

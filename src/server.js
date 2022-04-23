@@ -61,6 +61,8 @@ export function makeServer({ environment = "development" } = {}) {
     },
 
     routes() {
+
+
       this.namespace = "api";
       // auth routes (public)
       this.post("/auth/signup", signupHandler.bind(this));
@@ -94,6 +96,9 @@ export function makeServer({ environment = "development" } = {}) {
       this.get("/user/address", getAllAddress.bind(this));
       this.post("/user/address", addAddress.bind(this));
       this.delete("/user/address/:addressId", removeAddress.bind(this));
+
     },
+
+    
   });
 }

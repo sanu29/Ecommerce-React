@@ -28,7 +28,6 @@
         case 'rating':
                 return {...state, rating:action.payload}
         case 'search':
-            console.log(action.payload)
             return {...state, search:action.payload}
         default:
             return state

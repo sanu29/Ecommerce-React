@@ -38,9 +38,9 @@ export const Products = () =>{
     
         return (
             <div
-            class="d-flex-row justify-content-center align-items-center border-1 border-color-gray padding-none addtocart btn border-radius-sm">
+            className="d-flex-row justify-content-center align-items-center border-1 border-color-gray padding-none addtocart btn border-radius-sm">
     
-            <button class="quantity-btn btn btn-primary margin-none w-100" onClick={(e)=>{
+            <button className="quantity-btn btn btn-primary margin-none w-100" onClick={(e)=>{
                
                 if(cart[cartIndex].qty>1)
                 {
@@ -51,8 +51,8 @@ export const Products = () =>{
                     DeleteCart(prod)
                 }
             }}> - </button>
-            <input type="text" value={cart[cartIndex].qty} class="quantity-input" disabled/>
-            <button class="quantity-btn btn btn-primary margin-none w-100"
+            <input type="text" value={cart[cartIndex].qty} className="quantity-input" disabled/>
+            <button className="quantity-btn btn btn-primary margin-none w-100"
              onClick={()=>{
                 UpdateQuantity(prod,'increment')
             }}> + </button>

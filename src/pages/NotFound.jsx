@@ -6,8 +6,8 @@ export const NotFound = () =>{
     return(
         <>
         <Header/>
-        <div class="wishlist-main">
-            <div class="comodities d-flex flex-wrap">
+        <div className="wishlist-main">
+            <div className="comodities d-flex flex-wrap">
         <h2 className="font-color-primary">Page Not Found</h2>
         <div><img src={notfound} className="notfoundimage justify-self-center margin-16"/></div>
         </div>

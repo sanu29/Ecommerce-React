@@ -33,16 +33,16 @@ export const Header = () => {
                     }}
                 >
                     {(user.firstName).toUpperCase()}
-                    <span class="material-icons">
+                    <span className="material-icons">
                         expand_more
                         </span>
                     </div>
                     <div className="d-flex-cols bg-white position-absolute options font-color-dark " style={{display:displayOptions}}>
-                    <div className="option"><Link to={'/profile'} class="position-relative">Profile</Link></div>
-                    <div  className="option flex-option"><Link to={'/cart'} class="position-relative">Cart</Link></div>    
-                    <div  className="option  flex-option"><Link to={'/wishlist'} class="position-relative">Wishlist</Link></div>    
+                    <div className="option"><Link to={'/profile'} className="position-relative">Profile</Link></div>
+                    <div  className="option flex-option"><Link to={'/cart'} className="position-relative">Cart</Link></div>    
+                    <div  className="option  flex-option"><Link to={'/wishlist'} className="position-relative">Wishlist</Link></div>    
                     <div  className="option  flex-option">
-                    <Link to={'/'} class="position-relative">Home</Link>
+                    <Link to={'/'} className="position-relative">Home</Link>
                         </div>    
                     <div  className="option  flex-option">
                                     {isLogin === true ? 
@@ -93,18 +93,18 @@ export const Header = () => {
             
 
             {(cart!==null&&cart!==undefined&&cart!==[]&&cart.length>0)?
-               <Link to={'/cart'} class="position-relative">
+               <Link to={'/cart'} className="position-relative">
                         <span className="heading-3 margin-8 material-icons header-icon">shopping_cart</span>
-                     <div class=" badge-buzy badge-icon position-absolute wishlist-notification"></div>
+                     <div className=" badge-buzy badge-icon position-absolute wishlist-notification"></div>
                  </Link>
     : <Link to={'/cart'} className="heading-3 margin-8 material-icons header-icon">shopping_cart</Link>}
     
 
 
         {(wishlist!==null&&wishlist!==undefined&&wishlist!==[]&&wishlist.length>0)?
-               <Link to={'/wishlist'} class="position-relative">
+               <Link to={'/wishlist'} className="position-relative">
                         <span className="heading-3 margin-8 material-icons header-icon">favorite</span>
-                     <div class=" badge-buzy badge-icon position-absolute wishlist-notification"></div>
+                     <div className=" badge-buzy badge-icon position-absolute wishlist-notification"></div>
                  </Link>
     : <Link to={'/wishlist'} className="heading-3 margin-8 material-icons header-icon">favorite</Link>}
            

@@ -17,7 +17,7 @@ function CategoriesContextProvider({children})
                 }
             catch(err)
                  {
-                     console.log(err)
+  
                  }
          })()
      
