@@ -2,6 +2,7 @@ import axios from "axios";
 import { createContext, useContext } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import { Toast } from "../component/Toast";
 
 const OrderContext = createContext()
 
@@ -21,7 +22,7 @@ function OrderContextProvider({children})
             })
 
             setorder(res.data.order)
-
+           
         } 
         catch(err)
         {
@@ -39,7 +40,7 @@ const addOrder =async (order) =>{
         })
         console.log(response.data.order)
         setorder(response.data.order)
-
+        Toast("Order Placed Successfully")
     }
     catch(err)
     {

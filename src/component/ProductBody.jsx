@@ -103,7 +103,7 @@ export const Products = () =>{
                                    
                                 }
                                 PostWishlist(prod,isInWishlist)
-                                toast("great done")
+                            
                                 }}
                             >
                                 
