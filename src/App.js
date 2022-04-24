@@ -10,6 +10,8 @@ import { Signup } from "./pages/signup";
 import { PrivateRoute } from "./component/PrivateRoutes";
 import { useAuthContext } from "./context/auth-context";
 import { NotFound } from "./pages/NotFound";
+import { Profile } from "./pages/Profile";
+import { Address } from "./pages/Address";
 function App() {
   const {isLogin} = useAuthContext
   return (
@@ -21,6 +23,8 @@ function App() {
             <Route element={<PrivateRoute/>}>
             <Route path="/wishlist" element={<Wishlist/>}/>
             <Route path="/cart" element={<Cart/>}/>
+            <Route path="/Profile" element={<Profile/>}/>
+            <Route path="/Address" element={<Address/>}/>
             </Route>
             <Route path="/login" element={<Login/>}/>
             <Route path="/signup" element={<Signup/>}/>

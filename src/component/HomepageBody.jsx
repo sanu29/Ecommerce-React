@@ -2,11 +2,14 @@ import { Categories, Img } from "./images"
 import { useCategoriesContext } from "../context/categories-context"
 import {ThreeDots} from "react-loader-spinner";
 import {Link} from "react-router-dom";
+import { useFilterContext } from "../context/filter-context";
 
 
 
 export const HomepageBody = () =>
  {
+ 
+  const {state, dispatch} = useFilterContext();
     const {categories} = useCategoriesContext();
     if(categories === 'loading')
     {
@@ -22,7 +25,14 @@ else{
         {categories.map((item)=>{
         if(item.id<6) 
         {
-             return(<Link to={'/product'} className="position-relative" key={item.id}>
+             return(<Link to={'/product'} className="position-relative" key={item.id}
+             onClick={()=>{
+               categories.map((item)=>{
+                dispatch({type:item.categoryName, payload:false})
+               })
+              dispatch({type:item.categoryName, payload:true})
+             }}
+             >
             <img src={item.image} className="categories-img border-radius-md " alt="dairy" srcSet="" />
             <div className="category-overlay position-absolute opacity-75 bg-white font-weight-bolder text-align-center padding-4 ">
               {item.categoryName}
@@ -31,7 +41,12 @@ else{
         )}})}
    </div>
 
-  <Link to={'/product'} className="  w-100 d-flex justify-content-center align-items-center boder-1 border-color-gray ">
+  <Link to={'/product'} className="  w-100 d-flex justify-content-center align-items-center boder-1 border-color-gray "
+               onClick={()=>{
+                categories.map((item)=>{
+                 dispatch({type:item.categoryName, payload:true})
+                })}}
+  >
   <div
     className="hero container-main w-fit-content d-flex  justify-content-center align-items-center overflow-hidden border-radius-md secondary-two-color-bg ">
     <div
@@ -56,7 +71,14 @@ else{
       if(item.id>5)
       {
            return(
-             <Link to={'/product'} className="card border-radius-sm" key={item.id}>
+             <Link to={'/product'} className="card border-radius-sm" key={item.id}
+             onClick={()=>{
+              categories.map((item)=>{
+               dispatch({type:item.categoryName, payload:false})
+              })
+             dispatch({type:item.categoryName, payload:true})
+            }}
+             >
               <img className="card-img-main border-radius-sm " src={item.image} alt="hero" />
              <div className="card-primary">
               <div className="card-subtitle">{item.categoryName}</div>
@@ -75,11 +97,11 @@ else{
 
 
 
-  <div className="margin-top d-flex-column justify-content-center align-items-center">
+  <div className="margin-top d-flex-column justify-content-center align-items-center w-100 features">
 
     <h1 className="heading2 margin-bottom text-primary">Our Features</h1>
 
-    <div className="d-flex justify-content-center align-items-center responsive-image flex-wrap ">
+    <div className="d-flex justify-content-center align-items-center responsive-image flex-wrap w-100 ">
 
       {<img src="https://instantgrocery.netlify.app/assets/images/feat.png" className="width-100" alt="features" srcSet="" /> }
     </div>

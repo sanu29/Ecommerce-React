@@ -10,6 +10,11 @@ import {
   updateCartItemHandler,
 } from "./backend/controllers/CartController";
 import {
+  getAllAddress,
+  addAddress,
+  removeAddress
+} from "./backend/controllers/AddressController";
+import {
   getAllCategoriesHandler,
   getCategoryHandler,
 } from "./backend/controllers/CategoryController";
@@ -49,13 +54,15 @@ export function makeServer({ environment = "development" } = {}) {
       });
 
       users.forEach((item) =>
-        server.create("user", { ...item, cart: [], wishlist: [] })
+        server.create("user", { ...item, cart: [], wishlist: [], address:[] })
       );
 
       categories.forEach((item) => server.create("category", { ...item }));
     },
 
     routes() {
+
+
       this.namespace = "api";
       // auth routes (public)
       this.post("/auth/signup", signupHandler.bind(this));
@@ -85,6 +92,13 @@ export function makeServer({ environment = "development" } = {}) {
         "/user/wishlist/:productId",
         removeItemFromWishlistHandler.bind(this)
       );
+
+      this.get("/user/address", getAllAddress.bind(this));
+      this.post("/user/address", addAddress.bind(this));
+      this.delete("/user/address/:addressId", removeAddress.bind(this));
+
     },
+
+    
   });
 }
