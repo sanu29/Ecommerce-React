@@ -10,7 +10,7 @@ import { Rating } from 'react-simple-star-rating'
 import { UseWishlistContext } from "../context/wishlist-context";
 import { useCartContext } from "../context/cart-context";
 import { useAuthContext } from "../context/auth-context";
-
+import { ToastContainer, toast } from 'react-toastify';
 
 
 export const Products = () =>{
@@ -81,9 +81,10 @@ export const Products = () =>{
                     return (<li className="product-list"  key={prod.id} >
                     <div className="card card-product border-radius-sm margin-8 d-flex justify-center align-items-center">
                     <div className="position-relative">
+                    <Link to={`/product/${prod._id}`} >
                         <img className="card-img-main card-img-main-product border-radius-sm margin-16 "
                             src={prod.image} alt="food"/>
-                                   
+                          </Link>          
                          
                        
                         <i
@@ -102,12 +103,13 @@ export const Products = () =>{
                                    
                                 }
                                 PostWishlist(prod,isInWishlist)
+                                toast("great done")
                                 }}
                             >
                                 
                                 {(wishlist!=="")?(wishlist.findIndex((item)=>item.id === prod.id))!==-1?'favorite':'favorite_outlined':'favorite_outlined'}</i>
 
-                    </div>
+                   </div>
                     <div className="card-primary">
                         <div className="card-title text-color-primary font-weight-bold">{prod.title}</div>
                         <h2 className="card-subtitle"><span className="text-muted">₹</span>{prod.price}/{prod.quantity}</h2>

@@ -36,7 +36,7 @@ export function OrderBody() {
                             </div>
                             <div className="card-primary">
                                 <div className="text-align-center  para4 font-weight-bolder">Quantity</div>
-                                <h2 className="para5 font-weight-bolder margin-4 text-align-center">₹ {item.qty}/{item.quantity} </h2>
+                                <h2 className="para5 font-weight-bolder margin-4 text-align-center"> {item.qty} </h2>
                               </div>
                               <div className="card-primary">
                                 <div className="text-align-center  para4 font-weight-bolder">Price</div>

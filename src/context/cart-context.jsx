@@ -55,9 +55,7 @@ function CartContextProvider({children})
         {
 
             const encodedToken = localStorage.getItem('token')
-            
-           
-                   
+
                         try{
                             
                             const response = await axios({

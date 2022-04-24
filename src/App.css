@@ -136,3 +136,11 @@ body {
     border-left: none;
     border-right: none;
 }
+.border-bottom{
+    border:none;
+    border-bottom:1px solid;
+}
+.product-single-image{
+    height: 15rem;
+    width: 15rem;
+}

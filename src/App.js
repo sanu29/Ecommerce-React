@@ -14,14 +14,21 @@ import { Profile } from "./pages/Profile";
 import { Address } from "./pages/Address";
 import { Checkout } from "./pages/Checkout";
 import { Order } from "./pages/Order";
+import { ProductMainPage } from "./pages/ProductMainPage";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
-  const {isLogin} = useAuthContext
+  const {isLogin} = useAuthContext();
+
+
+
   return (
     <div>
   
           <Routes>
             <Route path="/" element={<Homepage/>}/>
             <Route path="/product" element={<ProductListing/>}/>
+            <Route path="/product/:productId" element={<ProductMainPage/>}/>
             <Route element={<PrivateRoute/>}>
             <Route path="/wishlist" element={<Wishlist/>}/>
             <Route path="/cart" element={<Cart/>}/>
@@ -36,7 +43,7 @@ function App() {
             <Route path="/*" element={<NotFound/>}/>
 
           </Routes>
-
+      <ToastContainer/>
     </div>
   );
 }
