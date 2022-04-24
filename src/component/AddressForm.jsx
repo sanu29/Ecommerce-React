@@ -5,8 +5,7 @@ export function AddressForm(disp,setDisp) {
 
     const [name, setname] = useState("");
     const [mobileNumber, setmobileNumber] = useState("");
-    const [pincode, setpinCode] = useState("");
-    const [Location, setLocation] = useState("");
+    const [pincode, setPincode] = useState("");
     const [city, setcity] = useState("");
     const [Address, setAddress] = useState("");
     const [state, setstate] = useState("");
@@ -37,7 +36,7 @@ export function AddressForm(disp,setDisp) {
                 <label htmlFor="Name" className="para5  m-8 label">Pincode</label>
                 <input type="text" id="pincode" className="input border-color-gray " placeholder="Pincode"
                     onChange={(e) => {
-                        setpinCode(e.target.value);
+                        setPincode(e.target.value);
 
                     }}
                     onBlur={(e) => e.target.value === "" || e.target.value.length !== 6 ? seterror("Pincode format incorrect") : ""}

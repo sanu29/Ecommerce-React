@@ -83,7 +83,7 @@ body {
 
 .options{
     height: fit-content;
-    width: 5rem  !important;
+    width: 5rem ;
     top: 3rem;
     right: 0rem;
     justify-content: center;
