@@ -13,6 +13,7 @@ import { NotFound } from "./pages/NotFound";
 import { Profile } from "./pages/Profile";
 import { Address } from "./pages/Address";
 import { Checkout } from "./pages/Checkout";
+import { Order } from "./pages/Order";
 function App() {
   const {isLogin} = useAuthContext
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/cart" element={<Cart/>}/>
             <Route path="/Profile" element={<Profile/>}/>
             <Route path="/Address" element={<Address/>}/>
+            <Route path="/Order" element={<Order/>}/>
             <Route path="/Checkout" element={<Checkout/>}/>
             </Route>
             <Route path="/login" element={<Login/>}/>

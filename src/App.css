@@ -131,3 +131,8 @@ body {
 
     
 }
+.order-list{
+    border: 1px solid var(--light-gray);
+    border-left: none;
+    border-right: none;
+}

@@ -114,10 +114,34 @@ function CartContextProvider({children})
         }   
         } 
 
+        const DeleteEntirecart = async () =>{
+                    
+        if(isLogin)
+        {
 
+            const encodedToken = localStorage.getItem('token')
+            
+           
+                   
+                        try{const response = await axios({
+                            method: 'delete',
+                            url: '/api/user/cart',
+                            headers: {
+                                authorization: encodedToken,
+                            }
+                         }
+
+                        )
+
+                        setCart(response.data.cart)
+
+                    } catch(err)
+                    {
+                    }
+        }}
 
     return(
-        <CartContext.Provider value={{PostCart, cart, UpdateQuantity, DeleteCart}}>
+        <CartContext.Provider value={{PostCart, cart, UpdateQuantity, DeleteCart , DeleteEntirecart}}>
             {children}
         </CartContext.Provider>
     )

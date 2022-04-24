@@ -8,7 +8,7 @@ import { UseAddressContext } from "../context/address-context";
 import { UseOrderContext } from "../context/order-context";
 export const CheckoutBody = () =>{
 
-const {PostCart, DeleteCart , cart, UpdateQuantity } = useCartContext()
+const {PostCart, DeleteCart , cart, UpdateQuantity, DeleteEntirecart } = useCartContext()
 const {PostWishlist, wishlist} = UseWishlistContext();
 const [dispCart, setDispcart] = useState("none")
 const [dispAddrress, setDispAddrress] = useState("none");
@@ -179,8 +179,8 @@ return ( <div className="cart-main">
                                         </tbody>
                                     </table>
                                                  
-                                    <Link to={`/cart`} className="btn btn-primary w-100 margin-none text-align-center" >Go to Cart</Link >
-                                    <div to={`/cart`} className="btn btn-primary w-100 margin-none margin-top-1 text-align-center"
+                                    
+                                    <div to={`/cart`} className="btn btn-primary w-100 margin-none  text-align-center"
                                     onClick={()=>{
                                         if(deliveryAddress.finalAddress === "")
                                         {
@@ -188,13 +188,15 @@ return ( <div className="cart-main">
                                         }
                                         else{
                                             addOrder({cart,address:deliveryAddress.finalAddress,price});
-                                            <Navigate to={"/cart"}/>
-                                            navigate("/cart");
+                                            DeleteEntirecart();
+                                            <Navigate to={"/order"}/>
+                                            navigate("/order");
+                                        
                                         }
 
                                     }}
                                     >Place Order</div >
-                                    
+                                    <Link to={`/cart`} className="btn btn-gray margin-top-1 w-100 margin-none text-align-center" >Go to Cart</Link >
                         </div>
                         </div>  
                 </div>
