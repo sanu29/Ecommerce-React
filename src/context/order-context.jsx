@@ -1,0 +1,58 @@
+import axios from "axios";
+import { createContext, useContext } from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+
+const OrderContext = createContext()
+
+const UseOrderContext = ()=>useContext(OrderContext)
+
+function OrderContextProvider({children})
+{
+ const [order, setorder] = useState()
+
+ useEffect(()=>{
+    (async()=>{
+        try{
+            const res = await axios({
+                method:"get",
+                url:`/api/user/order`,
+                headers:{authorization:localStorage.getItem("token")}
+            })
+
+            setorder(res.data.order)
+
+        } 
+        catch(err)
+        {
+        }
+    })()
+
+},[])
+const addOrder =async (order) =>{
+    try{
+        const response = await axios({
+            method:"post",
+            url :`/api/user/order`,
+            headers:{authorization:localStorage.getItem("token")},
+            data:{order}
+        })
+        console.log(response.data.order)
+        setorder(response.data.order)
+
+    }
+    catch(err)
+    {
+
+    }
+}
+
+    return (
+        <OrderContext.Provider value={{order,setorder, addOrder}}>
+        
+            {children}
+        </OrderContext.Provider>
+    )
+}
+
+export {OrderContext, OrderContextProvider, UseOrderContext}

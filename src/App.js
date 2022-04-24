@@ -12,6 +12,7 @@ import { useAuthContext } from "./context/auth-context";
 import { NotFound } from "./pages/NotFound";
 import { Profile } from "./pages/Profile";
 import { Address } from "./pages/Address";
+import { Checkout } from "./pages/Checkout";
 function App() {
   const {isLogin} = useAuthContext
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/cart" element={<Cart/>}/>
             <Route path="/Profile" element={<Profile/>}/>
             <Route path="/Address" element={<Address/>}/>
+            <Route path="/Checkout" element={<Checkout/>}/>
             </Route>
             <Route path="/login" element={<Login/>}/>
             <Route path="/signup" element={<Signup/>}/>

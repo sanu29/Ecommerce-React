@@ -69,6 +69,7 @@ table{
     border-collapse: collapse;
       background-color: #F8F9FA;
     margin-bottom: 2rem;
+  
 }
 
 th{
@@ -76,11 +77,11 @@ th{
   text-align: left;
   font-weight: 600;
   font-size: 16px;
-  border-bottom: solid 1px var(--gray);
+  border-bottom: solid 1px var(--light-gray);
 }
 
 td{
-    padding:10px 8px;
+    padding:10px 10px;
   text-align: left;
   vertical-align:middle;
   font-weight: 400;
@@ -89,8 +90,33 @@ td{
 }
 
 .table-row-end{
-border: 1px solid var(--gray);
-border-left: none;
-border-right: none;
+border-top: 1px solid var(--light-gray);
+padding-top:  1rem;
 
+}
+
+.height-content-fit{
+    height: fit-content;
+}
+.box-shadow-md{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.checkout-image{
+    height: 3rem;
+    width: 3rem;
+}
+.total-row{
+    border-top: 1px solid var(--light-gray);
+    padding-top:1rem;
+}
+
+.total-data{
+    padding-top:1rem
+}
+.address-section{
+    cursor: pointer;
+}
+.badge{
+
+    line-height: 1rem;
 }

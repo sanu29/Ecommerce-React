@@ -18,7 +18,9 @@ export function AddressBody() {
         else{
  
             return address.map((element)=>{
-               return( <div className="border-1 border-color-gray box-shadow-md border-radius-md padding-32 margin-32" key={element._id}>
+               return( <div className="border-1 border-color-gray box-shadow-md border-radius-md padding-32 margin-32" key={element._id}
+                 
+               >
                    <div className="d-flex justify-content-between align-items-center">
                         <div className="font-weight-bold ">{element.name}</div>                  
                          <button className="btn margin-none"
@@ -36,7 +38,8 @@ export function AddressBody() {
 
     return <div className="profile-main padding-32 w-100 border-radius-md">
         <div className="font-color-primary heading-2 margin-32"  >Address Management</div>
-        <button className="btn btn-primary w-100"
+        <div className="d-flex-column align-items-center">
+        <button className="btn btn-primary "
         onClick={()=>{
             setAddNew("block")
         }}
@@ -47,7 +50,8 @@ export function AddressBody() {
         <div className="margin-32">
 
            {ListOfAddress()}
-        </div>
+        </div></div>
+
     </div>
 }
 
