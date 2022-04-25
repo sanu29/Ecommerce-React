@@ -1,7 +1,5 @@
 import axios from "axios";
-import { createContext, useContext } from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import { createContext, useContext,useEffect,useState } from "react";
 import { Toast } from "../component/Toast";
 
 const OrderContext = createContext()
