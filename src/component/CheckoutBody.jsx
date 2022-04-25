@@ -7,13 +7,14 @@ import { useState } from "react";
 import { UseAddressContext } from "../context/address-context";
 import { UseOrderContext } from "../context/order-context";
 import { CouponStruct, ListOfAddress } from "./ChekoutTable";
+import { useAuthContext } from "../context/auth-context";
 
 
 
 
 export const CheckoutBody = () =>{
     const {PostCart, DeleteCart , cart, UpdateQuantity, DeleteEntirecart } = useCartContext()
-     const [dispCart, setDispcart] = useState("none")
+    const [dispCart, setDispcart] = useState("none")
     const [dispAddrress, setDispAddrress] = useState("none");
     const [dispCheckout, setDispCheckout] = useState("none")
     const [coupon, setCoupon] = useState("")
@@ -26,9 +27,57 @@ export const CheckoutBody = () =>{
     const {pincodeDes} = UseAddressContext()
     const {order, setorder, addOrder} = UseOrderContext();
     const {addAddress, address , removeAddress} = UseAddressContext();
+
+    const { user} = useAuthContext();
     const navigate = useNavigate()
-
-
+    const initializeRazorpay = () => {
+        return new Promise((resolve) => {
+          const script = document.createElement("script");
+          script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    
+          script.onload = () => {
+            resolve(true);
+          };
+          script.onerror = () => {
+            resolve(false);
+          };
+    
+          document.body.appendChild(script);
+        });
+      };
+      const payToRazorPay = async () => {
+        const res = await initializeRazorpay();
+    
+        if (!res) {
+          alert("Razorpay Failed to load");
+          return;
+        }
+    
+        const options = {
+          key: process.env.REACT_APP_RAZORPAY_KEY_ID,
+          name: "Instant-Groceries",
+          currency: "INR",
+          amount: price*100,
+          handler: function (response) {
+            if (response && response.razorpay_payment_id) {
+              // Place order
+                console.log("response",response)
+                 addOrder({cart,address:deliveryAddress.finalAddress,price});
+                 DeleteEntirecart();
+                 <Navigate to={"/order"}/>
+                 navigate("/order");
+            }
+          },
+          prefill: {
+            name: user.firstName ,
+            email: user.email,
+            method: "netbanking",
+          },
+        };
+    
+        const paymentObject = new window.Razorpay(options);
+        paymentObject.open();
+      };
     if(cart === [] || cart === "" || cart === undefined|| cart.length <1)
     {
         return (
@@ -135,10 +184,8 @@ export const CheckoutBody = () =>{
                                                     setError("Address not selected.")
                                             }
                                             else{
-                                                addOrder({cart,address:deliveryAddress.finalAddress,price});
-                                                DeleteEntirecart();
-                                                <Navigate to={"/order"}/>
-                                                navigate("/order");
+                                                payToRazorPay()
+                                               
                                             
                                             }
 
