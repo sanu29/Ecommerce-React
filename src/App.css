@@ -73,10 +73,8 @@ body {
    font-weight: bold;
 }
 .notfoundimage{
-    display: flex;
-    justify-content: center;
-    height: 20rem;
-    width: 20rem;
+    height: 30rem;
+    width: 28rem;
 }
 .search-button{
     flex-shrink: 0;

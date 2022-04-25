@@ -17,11 +17,11 @@ export function OrderBody() {
  
             return order.map((element)=>{
                return( 
-                      <div className="padding-32 border-1 border-color-gray border-radius-md w-100" key={element._id}> 
-                       <div className="margin-top-1 para4 "><b>Order Id </b>: {element._id}</div>
-                       <div className="margin-top-1 para4"><b>Shiping Address </b>: {element.address}</div>
-                       <div className="d-flex-column justify-content-center w-100 align-items-center margin-top-1 w-100">
-                         {(element.cart).map((item)=>{
+                      <div className="w-100 padding-32 border-1 border-color-gray border-radius-md" key={element._id}> 
+                    <div className="margin-top-1 para4"><b>Order Id </b>: {element._id}</div>
+                    <div className="margin-top-1 para4"><b>Shiping Address </b>: {element.address}</div>
+                   <div className="d-flex-column justify-content-center w-100 align-items-center w-100  margin-top-1">
+                     {(element.cart).map((item)=>{
                          return (
                             <div className="w-100 order-list border-radius-sm  d-flex-row align-items-center justify-content-between flex-wrap ">
                             <div className="position-relative d-flex justify-content-center align-items-center">
@@ -56,7 +56,7 @@ export function OrderBody() {
     }
 
     return <div className="profile-main padding-32 w-100 border-radius-md">
-        <div className="font-color-primary heading-2 margin-32 w-100"  >Order Management</div>
+        <div className="font-color-primary heading-2 margin-32"  >Order Management</div>
            {ListOfOrder()}
   
    </div>
