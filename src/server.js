@@ -6,6 +6,7 @@ import {
 import {
   addItemToCartHandler,
   getCartItemsHandler,
+  removeAllItemFromCartHandler,
   removeItemFromCartHandler,
   updateCartItemHandler,
 } from "./backend/controllers/CartController";
@@ -30,6 +31,7 @@ import {
 import { categories } from "./backend/db/categories";
 import { products } from "./backend/db/products";
 import { users } from "./backend/db/users";
+import { addOrder, getAllOrders } from "./backend/controllers/OrderController";
 
 export function makeServer({ environment = "development" } = {}) {
   return new Server({
@@ -84,7 +86,10 @@ export function makeServer({ environment = "development" } = {}) {
         "/user/cart/:productId",
         removeItemFromCartHandler.bind(this)
       );
-
+      this.delete(
+        "/user/cart/",
+        removeAllItemFromCartHandler.bind(this)
+      );  
       // wishlist routes (private)
       this.get("/user/wishlist", getWishlistItemsHandler.bind(this));
       this.post("/user/wishlist", addItemToWishlistHandler.bind(this));
@@ -92,10 +97,14 @@ export function makeServer({ environment = "development" } = {}) {
         "/user/wishlist/:productId",
         removeItemFromWishlistHandler.bind(this)
       );
-
+      //Address routed (private)
       this.get("/user/address", getAllAddress.bind(this));
       this.post("/user/address", addAddress.bind(this));
       this.delete("/user/address/:addressId", removeAddress.bind(this));
+
+      //Order routes (private)
+      this.get("/user/order", getAllOrders.bind(this));
+      this.post("/user/order", addOrder.bind(this));
 
     },
 

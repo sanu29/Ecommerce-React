@@ -73,8 +73,10 @@ body {
    font-weight: bold;
 }
 .notfoundimage{
-    height: 30rem;
-    width: 28rem;
+    display: flex;
+    justify-content: center;
+    height: 20rem;
+    width: 20rem;
 }
 .search-button{
     flex-shrink: 0;
@@ -130,4 +132,17 @@ body {
 
 
     
+}
+.order-list{
+    border: 1px solid var(--light-gray);
+    border-left: none;
+    border-right: none;
+}
+.border-bottom{
+    border:none;
+    border-bottom:1px solid;
+}
+.product-single-image{
+    height: 15rem;
+    width: 15rem;
 }

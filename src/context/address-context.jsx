@@ -1,7 +1,9 @@
 import axios from "axios";
 import { createContext, useContext } from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import { Toast } from "../component/Toast";
+
+
 
 const AddrressContext = createContext()
 
@@ -38,7 +40,7 @@ const addAddress =async (address) =>{
             data:{address}
         })
         setaddress(response.data.address)
-
+       Toast("Address Added Successfully")
     }
     catch(err)
     {
@@ -55,6 +57,7 @@ const removeAddress = async(id) =>{
             headers:{authorization:localStorage.getItem("token")}
         })
         setaddress(response.data.address)
+        Toast("Address Removed Sucessfully")
     }
     catch(err)
     {

@@ -20,5 +20,7 @@ export const users = [
     lastName: "test",
     email: "test@gmail.com",
     password: "tested",
+    order:[],
+    address:[]
   }
 ];

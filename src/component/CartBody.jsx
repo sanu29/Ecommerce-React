@@ -83,43 +83,45 @@ export const CartBody = () =>{
             })}
         </div>
       
-                <div className=" border-radius-sm margin-24 flex-wrap" >
-                    <table className=" flex-wrap">
+                <div className=" " >
+                    <div className="border-radius-sm margin-24 flex-wrap bg-white box-shadow-md padding-16 height-content-fit">                   <table className=" flex-wrap bg-white  ">
+                    <tr className="table-row">
+                        <th className="tex-align-center">Cart Summary</th>
+                        <th ></th>
+                    </tr>
                         <tr className="table-row">
-                        <th>Item</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                        <th>Total</th>
-                        </tr>
-                    {cart.map((item)=>{
-                        return(
-                            <tr className="table-row">
-                            <td className="text-align-left">{item.title}</td>
-                            <td>{item.qty}</td>
-                            <td>{item.price}</td>
-                            <td>{item.qty * item.price}</td>
-                        </tr>
-                        
-                        )
-                    })}
-                     <tr className="table-row-end ">
-                            <td className="font-weight-bold">
-                                Grand Total
-                            </td>
-                            
-                            <td className="font-weight-bold"></td><td></td>
-                            <td className="font-weight-bold">                   
-                     {cart.reduce((acc,item)=>{
-                        return acc + (item.qty*item.price)
-                    },0)}</td>
+                            <td className="text-align-left">Quantity</td>
+                            <td>{cart.reduce((acc,item)=>{
+                               acc= acc+Number(item.qty)
+                               return acc;
+                            },0)}
+                                </td>
+                        </tr>                  
+                        <tr className="table-row">
+                            <td className="text-align-left">Price</td>
+                            <td>₹ {cart.reduce((acc,item)=>{
+                               acc= acc+(Number(item.qty)*Number(item.price))
+                               return acc;
+                            },0)}
+                                </td>
+                        </tr>    
+                        <tr className="table-row">
+                            <td className="text-align-left">Delivery </td>
+                            <td>₹ 50</td>
+                        </tr>  
 
+                        <tr className="table-row-end ">
+                            <td className="text-align-left">Total</td>
+                            <td>₹ { (cart.reduce((acc,item)=>{
+                               acc= acc+(Number(item.qty)*Number(item.price))
+                               return acc;
+                            },0))+50}</td>    
                         </tr>
-                        
                     </table>
-                    <div className="btn btn-primary w-100 text-align-center margin-none">Proceed to Checkout</div>
-                    <Link to={"/product"} className="btn btn-primary w-100 text-align-center margin-none">Shop More</Link>
+                    <Link to={"/Checkout"}className="btn btn-primary w-100 text-align-center margin-none ">Proceed to Checkout</Link>
+                    <Link to={"/product"} className="btn btn-primary w-100 text-align-center margin-top-1 margin-none">Shop More</Link>
                 </div>
-                  
+                  </div>
                   </div>
               
                   </div>
