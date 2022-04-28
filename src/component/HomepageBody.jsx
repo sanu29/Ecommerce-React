@@ -1,4 +1,3 @@
-import { Categories, Img } from "./images"
 import { useCategoriesContext } from "../context/categories-context"
 import {ThreeDots} from "react-loader-spinner";
 import {Link} from "react-router-dom";
@@ -9,7 +8,7 @@ import { useFilterContext } from "../context/filter-context";
 export const HomepageBody = () =>
  {
  
-  const {state, dispatch} = useFilterContext();
+  const {dispatch} = useFilterContext();
     const {categories} = useCategoriesContext();
     if(categories === 'loading')
     {
@@ -21,14 +20,15 @@ export const HomepageBody = () =>
 else{
     return (
         <div className="container-main home-main">
-        <div className="categories d-flex-row flex-wrap justify-content-center side-margin">
+        <div className="categories d-flex-row flex-wrap justify-content-evenly">
         {categories.map((item)=>{
-        if(item.id<6) 
+        if(item.id<7) 
         {
              return(<Link to={'/product'} className="position-relative" key={item.id}
              onClick={()=>{
                categories.map((item)=>{
                 dispatch({type:item.categoryName, payload:false})
+                return ""
                })
               dispatch({type:item.categoryName, payload:true})
              }}
@@ -38,23 +38,29 @@ else{
               {item.categoryName}
             </div>
            </Link>
-        )}})}
+        )}
+        else{
+          return ""
+        }
+        
+        })}
    </div>
 
   <Link to={'/product'} className="  w-100 d-flex justify-content-center align-items-center boder-1 border-color-gray "
                onClick={()=>{
                 categories.map((item)=>{
                  dispatch({type:item.categoryName, payload:true})
+                 return ""
                 })}}
   >
   <div
-    className="hero container-main w-fit-content d-flex  justify-content-center align-items-center overflow-hidden border-radius-md secondary-two-color-bg ">
+    className="hero container-main w-100 d-flex  justify-content-between align-items-center overflow-hidden border-radius-md secondary-two-color-bg ">
     <div
-      className="hero-desc text-primary d-flex-column align-items-center justify-content-center padding-16 heading2 ">
+      className="hero-desc text-primary d-flex-column align-items-center w-50 justify-content-center padding-16 heading2 ">
       Fresh healthy Vegetables
       <div className="font-weight-bolder heading1">Min 10% Off </div>
     </div>
-    <div>
+    <div className="w-75">
       <img src="https://instantgrocery.netlify.app/assets/images/vegetable.jpg" alt="discount" className="hero-img"
         srcSet="" />
     </div>
@@ -63,18 +69,19 @@ else{
   </Link>
 
 
-  <div className="margin-top w-100 d-flex-column justify-content-center align-items-center">
-    <h1 className="heading2 heading2 margin-bottom text-primary"> Daily Needs</h1>
-    <div className="comodities d-flex justify-content-center align-items-center flex-wrap">
+  <div className="margin-top w-100 d-flex-column justify-content-center ">
+    <h1 className=" text-primary margin-top-1 heading2 text-align-center"> Daily Needs</h1>
+    <div className="comodities d-flex flex-wrap justify-content-evenly margin-top-1">
 
       {categories.map((item)=>{
-      if(item.id>5)
+      if(item.id>1 && item.id != 4 && item.id != 5)
       {
            return(
              <Link to={'/product'} className="card border-radius-sm" key={item.id}
              onClick={()=>{
               categories.map((item)=>{
                dispatch({type:item.categoryName, payload:false})
+               return ""
               })
              dispatch({type:item.categoryName, payload:true})
             }}
@@ -87,6 +94,7 @@ else{
             </Link>
         )
         }
+        return ""
       })}
 
 

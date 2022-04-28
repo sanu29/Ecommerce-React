@@ -1,10 +1,5 @@
-import axios from "axios";
-import { useState } from "react";
-import { UseAddressContext } from "../context/address-context";
 import { UseOrderContext } from "../context/order-context";
-import "../pages/auth.css"
-import { AddressForm } from "./AddressForm";
-import { InCartData } from "./InCartData";
+import "../pages/Auth/auth.css"
 export function OrderBody() {
 
     const {order} = UseOrderContext();

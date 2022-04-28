@@ -1,26 +1,11 @@
 import "./App.css"
-import "./component/style.css"
-import { Footer } from "./component/Footer";
-import { Header } from "./component/Header";
-import {BrowserRouter, Routes, Route } from "react-router-dom";
-import {Homepage, ProductListing,Wishlist, Cart } from "./pages/AllPages"
+import {Homepage,Address,Login,Signup,Cart,Checkout,NotFound,Order,ProductListing,ProductMainPage,Profile,Wishlist} from "./pages/index"
+import { Routes, Route } from "react-router-dom";
 import MockmanEs from "mockman-js";
-import { Login } from "./pages/Login";
-import { Signup } from "./pages/signup";
 import { PrivateRoute } from "./component/PrivateRoutes";
-import { useAuthContext } from "./context/auth-context";
-import { NotFound } from "./pages/NotFound";
-import { Profile } from "./pages/Profile";
-import { Address } from "./pages/Address";
-import { Checkout } from "./pages/Checkout";
-import { Order } from "./pages/Order";
-import { ProductMainPage } from "./pages/ProductMainPage";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 function App() {
-  const {isLogin} = useAuthContext();
-
-
 
   return (
     <div>

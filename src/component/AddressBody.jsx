@@ -1,15 +1,14 @@
-import axios from "axios";
+
 import { useState } from "react";
 import { UseAddressContext } from "../context/address-context";
-import "../pages/auth.css"
+import "../pages/Auth/auth.css"
 import { AddressForm } from "./AddressForm";
 export function AddressBody() {
 
 
 
     const [addNew, setAddNew] = useState("none")
-    const {pincodeDes} = UseAddressContext()
-    const {addAddress, address , removeAddress} = UseAddressContext();
+    const {address , removeAddress} = UseAddressContext();
     const ListOfAddress = () =>{
          if(address === [] || address === "" || address === undefined|| address.length <1)
         {
@@ -27,7 +26,7 @@ export function AddressBody() {
                          onClick={()=>removeAddress(element._id)}
                          >Remove</button>
                     </div>
-                    
+                    <div className="margin-top-1 para4">{element.mobileNumber}</div>
                     <div className="margin-top-1 para5">{element.Address} , {element.city}, {element.state}, {element.pincode}</div>
 
                 

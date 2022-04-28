@@ -69,7 +69,8 @@ import chicken from "./chicken.jfif"
 import eggs from "./eggs.webp"
 import chickendrum from "./chickendrum.webp"
 import notfound from "./notfound.svg"
-
+import heroChocolate from "./chocolate-hero.jpg"
+import heroFruit from "./fruit-hero.jpg"
 export {almonds, anjeer, apple, banana, bananachips,bread,bringal,brownchana,butter,capsicum
         , cardamom,chana,chanadal,chashew,cheese,cheeseballs,chicken,chickenKheema,chickendrum
     ,chickenmasala,chilie,chocolate,cookie,curd,dates,eggs,fish,grapes,greenpeas
@@ -77,4 +78,4 @@ export {almonds, anjeer, apple, banana, bananachips,bread,bringal,brownchana,but
     ,matki,milk,mixdal,mixedsprouts,momos,moong,moongdal,moongsprout,Nachos,nuggets
     ,oats,onion,orange,paneermasala,pav,pavbhajimasala,peanuts
     ,pista,pomegranate,potato,puff,rajma,rasins,redcapsicum,redchilipowder
-    ,strawberry,sweetlime,tomatoes,turmeric,urad,walnut,watermellon,notfound} 
+    ,strawberry,sweetlime,tomatoes,turmeric,urad,walnut,watermellon,notfound, heroChocolate, heroFruit} 

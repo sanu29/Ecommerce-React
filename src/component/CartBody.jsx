@@ -1,9 +1,9 @@
 import { useCartContext } from "../context/cart-context"
-import "../pages/cart.css"
+import "../pages/Cart/cart.css"
 import { UseWishlistContext } from "../context/wishlist-context";
 import { Link } from "react-router-dom";
 export const CartBody = () =>{
-    const {PostCart, DeleteCart , cart, UpdateQuantity } = useCartContext()
+    const { DeleteCart , cart, UpdateQuantity } = useCartContext()
     const {PostWishlist, wishlist} = UseWishlistContext();
     if(cart === [] || cart === "" || cart === undefined|| cart.length <1)
     {
@@ -19,7 +19,7 @@ export const CartBody = () =>{
     return (
         <div className="cart-main" >
         <div className="d-flex w-100 flex-wrap">
-            <div className="comodities-cart d-flex-column justify-content-between align-items-center flex-wrap">
+            <div className="comodities-cart d-flex-column justify-content-start align-items-center flex-wrap">
             {cart.map((item,key)=>{
 
 

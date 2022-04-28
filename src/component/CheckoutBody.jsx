@@ -1,6 +1,5 @@
 import { useCartContext } from "../context/cart-context"
-import "../pages/cart.css"
-import { UseWishlistContext } from "../context/wishlist-context";
+import "../pages/Cart/cart.css"
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { InCartData } from "./InCartData";
 import { useState } from "react";
@@ -13,20 +12,19 @@ import { useAuthContext } from "../context/auth-context";
 
 
 export const CheckoutBody = () =>{
-    const {PostCart, DeleteCart , cart, UpdateQuantity, DeleteEntirecart } = useCartContext()
+    const { cart, DeleteEntirecart } = useCartContext()
     const [dispCart, setDispcart] = useState("none")
     const [dispAddrress, setDispAddrress] = useState("none");
     const [dispCheckout, setDispCheckout] = useState("none")
     const [coupon, setCoupon] = useState("")
     const [error, setError] = useState("")
     const [couponError, setCouponError] = useState("")
-    const [deliveryAddress, setDeliveryAddress] = useState({id:"",finalAddress:""});
+    const [deliveryAddress, setDeliveryAddress] = useState({id:"",finalAddress:"",mobileNumber:""});
     const [price, setPrice] = useState(cart.reduce((acc, item) => {
         acc =   acc + (item.qty * item.price);
          return acc}, 0)+50)
-    const {pincodeDes} = UseAddressContext()
-    const {order, setorder, addOrder} = UseOrderContext();
-    const {addAddress, address , removeAddress} = UseAddressContext();
+    const { addOrder} = UseOrderContext();
+    const { address } = UseAddressContext();
 
     const { user} = useAuthContext();
     const navigate = useNavigate()
@@ -58,7 +56,7 @@ export const CheckoutBody = () =>{
           name: "Instant-Groceries",
           currency: "INR",
           amount: price*100,
-          handler: function (response) {
+         handler: function (response) {
             if (response && response.razorpay_payment_id) {
               // Place order
                 console.log("response",response)
@@ -71,7 +69,7 @@ export const CheckoutBody = () =>{
           prefill: {
             name: user.firstName ,
             email: user.email,
-            method: "netbanking",
+            contact : deliveryAddress.mobileNumber,
           },
         };
     

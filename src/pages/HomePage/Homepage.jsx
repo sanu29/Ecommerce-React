@@ -1,6 +1,5 @@
-import { Header, Footer , HomepageBody} from "../component/AllComponents"
-import { useCategoriesContext } from "../context/categories-context";
-import "../App.css"
+import { Header, Footer , HomepageBody} from "../../component/AllComponents"
+import "../../App.css"
 import "./Homepage.css"
 export const Homepage = () => 
 {

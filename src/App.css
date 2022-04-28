@@ -108,6 +108,9 @@ body {
 .username:hover{
     cursor: pointer;
 }
+.cursor-pointer{
+    cursor: pointer;
+}
 @media only screen and (max-width :640px)
 {
     .search{

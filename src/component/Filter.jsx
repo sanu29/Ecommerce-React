@@ -36,7 +36,14 @@ return (
              </li>
              </div>
         
-        <li className="margin-8 font-weight-bolder para4 ">Category</li>
+        <li className="margin-8 font-weight-bolder para4 d-flex justify-content-between  align-items-center">
+                <div>Category </div>
+                <span class="material-icons cursor-pointer margin-none"
+                onClick={()=>dispatch({type:'remove', payload:true})}
+                >
+                        filter_alt_off
+                    </span>
+        </li>
         
            
 

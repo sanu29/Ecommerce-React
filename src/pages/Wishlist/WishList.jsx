@@ -1,7 +1,7 @@
-import { Header, Footer } from "../component/AllComponents"
-import "../App.css"
-import "./WishList.css"
-import { WishlistBody } from "../component/WishlistBody"
+import { Header, Footer } from "../../component/AllComponents"
+import "../../App.css"
+import "../Wishlist/WishList.css"
+import { WishlistBody } from "../../component/WishlistBody"
 export const Wishlist = () => 
 {
 
