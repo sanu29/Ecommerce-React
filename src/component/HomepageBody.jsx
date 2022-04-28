@@ -22,7 +22,7 @@ else{
         <div className="container-main home-main">
         <div className="categories d-flex-row flex-wrap justify-content-evenly">
         {categories.map((item)=>{
-        if(item.id<7) 
+        if(item.id<6) 
         {
              return(<Link to={'/product'} className="position-relative" key={item.id}
              onClick={()=>{
@@ -74,7 +74,7 @@ else{
     <div className="comodities d-flex flex-wrap justify-content-evenly margin-top-1">
 
       {categories.map((item)=>{
-      if(item.id>1 && item.id != 4 && item.id != 5)
+      if(item.id>5 || item.id == 3)
       {
            return(
              <Link to={'/product'} className="card border-radius-sm" key={item.id}
