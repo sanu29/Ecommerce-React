@@ -22,7 +22,8 @@ function FilterContextProvider ({children})
         lowtohigh: false,
         hightolow: false,
         rating : 1,
-        search :""
+        search :"",
+        remove :'false'
     })
     return(
         <FilterContext.Provider value={{state,dispatch}}>

@@ -42,14 +42,14 @@ export const ListOfAddress = (address, setDeliveryAddress, deliveryAddress) =>{
 
         return address.map((element)=>{
            return( <div className="border-1 w-100 border-color-gray address-section border-radius-md padding-32 margin-4" key={element._id}
-           onClick={()=>setDeliveryAddress({...deliveryAddress,id:element._id,finalAddress:`${element.Address} , ${element.city}, ${element.state}, ${element.pincode}`})}
+           onClick={()=>setDeliveryAddress({...deliveryAddress,id:element._id,finalAddress:`${element.Address} , ${element.city}, ${element.state}, ${element.pincode}`, mobileNumber : element.mobileNumber})}
            >
                <div className="d-flex justify-content-between align-items-center">
                     <div className="font-weight-bold ">{element.name}</div>
                     {deliveryAddress.id === element._id?  <div class="badge badge-primary padding-4 ">Selected</div>:<div></div>}    
                      
                                  </div>
-                
+                                 <div className="margin-top-1 para4">{element.mobileNumber}</div>
                 <div className="margin-top-1 para5">{element.Address} , {element.city}, {element.state}, {element.pincode}</div>
 
             

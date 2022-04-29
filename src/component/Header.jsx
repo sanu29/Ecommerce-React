@@ -62,7 +62,13 @@ export const Header = () => {
 
         <Link to={'/'}  className="logo">Instant-Grocery</Link>
         <div className="d-flex align-items-center text-primary border-color-gray w-100  border-radius-sm overflow-hidden search justify-content-between">
-            <input type="text" className="input-sm box-shadow-none margin-none search w-100" onChange={(e)=>setSearch(e.target.value)} placeholder="Seacrh..."/>
+            <input type="text" className="input-sm box-shadow-none margin-none search w-100" onChange={(e)=>{
+                setSearch(e.target.value)
+                categories.map((item)=>{
+                    dispatch({type:'search', payload:search})
+
+            })}}
+                placeholder="Seacrh..."/>
            
            
            

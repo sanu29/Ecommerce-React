@@ -1,23 +1,18 @@
-import { Categories, Img } from "./images"
-import { useCategoriesContext } from "../context/categories-context"
 import {ThreeDots} from "react-loader-spinner";
-import {Link, Navigate, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import { useProductContext } from "../context/products-context";
 import { useFilterContext } from "../context/filter-context";
 import { FilterCategory } from "./FilterCategory";
-import { useState } from "react";
 import { Rating } from 'react-simple-star-rating'
 import { UseWishlistContext } from "../context/wishlist-context";
 import { useCartContext } from "../context/cart-context";
 import { useAuthContext } from "../context/auth-context";
-import { ToastContainer, toast } from 'react-toastify';
 
 
 export const Products = () =>{
     const {isLogin} = useAuthContext();
     let {products} = useProductContext()
-    const {state, dispatch} = useFilterContext();
-    const [res, setRes] = useState()
+    const {state} = useFilterContext();
     const {PostWishlist, wishlist} = UseWishlistContext();
     const {PostCart, DeleteCart , cart, UpdateQuantity } = useCartContext()
 
@@ -75,8 +70,9 @@ export const Products = () =>{
             })}
     return (
         <>         
-            <div className="main-products">
-             <div className="comodities d-flex justify-content-around flex-wrap">
+            <div className="main-products justify-content-center">
+              
+             <div className="comodities d-flex justify-content-start flex-wrap ">
                  {filteredprods.map((prod,key)=>{
                     return (<li className="product-list"  key={prod.id} >
                     <div className="card card-product border-radius-sm margin-8 d-flex justify-center align-items-center">
@@ -128,7 +124,7 @@ export const Products = () =>{
                  })}
                  
                  </div>
-                 </div>
+                </div>
              </>
     )}
 }

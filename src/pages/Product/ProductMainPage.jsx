@@ -1,14 +1,13 @@
-import "../App.css"
+import "../../App.css"
 import "./Products.css"
-import {Header, Footer , Filter, Products} from "../component/AllComponents"
+import {Header, Footer } from "../../component/AllComponents"
 import { useParams } from "react-router-dom"
-import { useProductContext } from "../context/products-context"
+import { useProductContext } from "../../context/products-context"
 import { ThreeDots } from "react-loader-spinner"
-import { useState } from "react"
 import { Rating } from "react-simple-star-rating"
-import { useCartContext } from "../context/cart-context"
-import { UseWishlistContext } from "../context/wishlist-context"
-import { useAuthContext } from "../context/auth-context"
+import { useCartContext } from "../../context/cart-context"
+import { UseWishlistContext } from "../../context/wishlist-context"
+import { useAuthContext } from "../../context/auth-context"
 export const ProductMainPage = () => 
 {
     const {products} = useProductContext()
@@ -69,7 +68,7 @@ export const ProductMainPage = () =>
                 <div className="d-flex flex-wrap  justify-content-center  w-100 flex-wrap ">
                 <div className="d-flex flex-wrap justify-content-center align-items-start">
                 <div className="product-single-image margin-32 position-relative">
-                    <img src={prodData.image} className="w-100 product-single-image box-shadow-md border-radius-md"  />
+                    <img src={prodData.image} className="w-100 product-single-image box-shadow-md border-radius-md"  alt={prodData.title}/>
                     <i className="material-icons btn btn-icon  position-absolute card-icon-dismiss btn-danger-outline wish"
                         onClick={()=>{
                                 let isInWishlist = -1

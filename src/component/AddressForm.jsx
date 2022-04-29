@@ -18,17 +18,24 @@ export function AddressForm(disp,setDisp) {
 
         {error !== "" ? <div className="alert alert-danger margin-none">{error}</div> : ""}
 
+        <div className="address-form d-flex justify-content-evenly flex-wrap w-100 ">
 
+                    <div className="d-flex-column w-100">
+                        <label htmlFor="Name" className="para5  m-8 label">Full Name</label>
+                        <input type="text" id="name" className="input border-color-gray " placeholder="Name"
+                            onChange={(e) => setname(e.target.value)}
+                            onBlur={(e) => e.target.value === "" ? seterror("Name cannot be empty") : ""}
+
+                            value={name} />
+                    </div>
+       </div>
 
         <div className="address-form d-flex justify-content-evenly flex-wrap w-100 ">
 
             <div className="d-flex-column w-50">
-                <label htmlFor="Name" className="para5  m-8 label">Name</label>
-                <input type="text" id="name" className="input border-color-gray " placeholder="Name"
-                    onChange={(e) => setname(e.target.value)}
-                    onBlur={(e) => e.target.value === "" ? seterror("Name cannot be empty") : ""}
-
-                    value={name} />
+                <label htmlFor="Name" className="para5  m-8 label">Mobile Number</label>
+                <input type="text" pattern="[7-9][0-9]{10}" maxLength={10} minLength={10} id="name" className="input border-color-gray " placeholder="Mobile Number"
+                   onChange={(e) =>setmobileNumber(e.target.value)}  />
             </div>
 
 
@@ -72,15 +79,20 @@ export function AddressForm(disp,setDisp) {
         <div className="address-form d-flex justify-content-evenly flex-wrap w-100 margin-top-1 ">
             <button className="btn btn-primary margin-none w-100"
                 onClick={() => {
-                    if (name === "" || Address === "" || pincode === "" || state === "") {
+                    const pattern = `[7-9][0-9]{9}` 
+                    if (name === "" || Address === "" || pincode === "" || state === ""||mobileNumber==="") {
                         seterror("Fields cannot be Empty");
                     }
                     else if (pincode.length !== 6) {
                         seterror("Pincode should be 6 digits");
                     }
-                    else {
+                    else if(!(mobileNumber.match(pattern)))
+                        {
+                            seterror("Please enter a valid mobile number")
+                        }
+                   else {
                         seterror('');
-                        addAddress({name,pincode,Address,city,state})
+                        addAddress({name,pincode,Address,city,state,mobileNumber})
                         setDisp("none")
                     }
                 }}

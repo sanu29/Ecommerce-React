@@ -20,7 +20,7 @@ const {PostCart} = useCartContext();
            <div className="wishlist-main">
             <div className="font-color-primary heading2 ">Wishlist</div>
          
-            <div className="comodities d-flex justify-content-center flex-wrap align-items-center">
+            <div className="comodities d-flex justify-content-start flex-wrap align-items-center">
 
        
         {wishlist.map((prod,key)=>{
