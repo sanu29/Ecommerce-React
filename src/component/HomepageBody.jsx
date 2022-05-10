@@ -61,7 +61,7 @@ else{
       <div className="font-weight-bolder heading1">Min 10% Off </div>
     </div>
     <div className="w-75">
-      <img src=https://instantgroceries.netlify.app/assets/images/vegetable.jpg" alt="discount" className="hero-img"
+      <img src="https://instantgroceries.netlify.app/assets/images/vegetable.jpg" alt="discount" className="hero-img"
         srcSet="" />
     </div>
   </div>
