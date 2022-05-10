@@ -1,7 +1,7 @@
 import axios from "axios";
-import { createContext, useContext } from "react";
-import { useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { Navigate ,useNavigate} from "react-router-dom";
+import { Toast } from "../component/Toast";
 import { useAuthContext } from "./auth-context";
 
 const WishlistContext = createContext();
@@ -49,6 +49,7 @@ function WishlistContextProvider({children})
                         )
                         
                         setWishlist(response.data.wishlist)
+                        Toast("Added To Wishlist")
                     } catch(err)
                     {
                                             }}

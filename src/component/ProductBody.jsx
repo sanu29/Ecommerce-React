@@ -1,21 +1,18 @@
-import { Categories, Img } from "./images"
-import { useCategoriesContext } from "../context/categories-context"
 import {ThreeDots} from "react-loader-spinner";
 import {Link} from "react-router-dom";
 import { useProductContext } from "../context/products-context";
 import { useFilterContext } from "../context/filter-context";
 import { FilterCategory } from "./FilterCategory";
-import { useState } from "react";
 import { Rating } from 'react-simple-star-rating'
 import { UseWishlistContext } from "../context/wishlist-context";
 import { useCartContext } from "../context/cart-context";
-
+import { useAuthContext } from "../context/auth-context";
 
 
 export const Products = () =>{
+    const {isLogin} = useAuthContext();
     let {products} = useProductContext()
-    const {state, dispatch} = useFilterContext();
-    const [res, setRes] = useState()
+    const {state} = useFilterContext();
     const {PostWishlist, wishlist} = UseWishlistContext();
     const {PostCart, DeleteCart , cart, UpdateQuantity } = useCartContext()
 
@@ -36,9 +33,9 @@ export const Products = () =>{
     
         return (
             <div
-            class="d-flex-row justify-content-center align-items-center border-1 border-color-gray padding-none addtocart btn border-radius-sm">
+            className="d-flex-row justify-content-center align-items-center border-1 border-color-gray padding-none addtocart btn border-radius-sm">
     
-            <button class="quantity-btn btn btn-primary margin-none w-100" onClick={(e)=>{
+            <button className="quantity-btn btn btn-primary margin-none w-100" onClick={(e)=>{
                
                 if(cart[cartIndex].qty>1)
                 {
@@ -49,8 +46,8 @@ export const Products = () =>{
                     DeleteCart(prod)
                 }
             }}> - </button>
-            <input type="text" value={cart[cartIndex].qty} class="quantity-input" disabled/>
-            <button class="quantity-btn btn btn-primary margin-none w-100"
+            <input type="text" value={cart[cartIndex].qty} className="quantity-input" disabled/>
+            <button className="quantity-btn btn btn-primary margin-none w-100"
              onClick={()=>{
                 UpdateQuantity(prod,'increment')
             }}> + </button>
@@ -73,15 +70,17 @@ export const Products = () =>{
             })}
     return (
         <>         
-            <div className="main-products">
-             <div className="comodities d-flex justify-content-around flex-wrap">
+            <div className="main-products justify-content-center">
+              
+             <div className="comodities d-flex justify-content-evenly flex-wrap w-100 ">
                  {filteredprods.map((prod,key)=>{
                     return (<li className="product-list"  key={prod.id} >
                     <div className="card card-product border-radius-sm margin-8 d-flex justify-center align-items-center">
                     <div className="position-relative">
+                    <Link to={`/product/${prod._id}`} >
                         <img className="card-img-main card-img-main-product border-radius-sm margin-16 "
                             src={prod.image} alt="food"/>
-                                   
+                          </Link>          
                          
                        
                         <i
@@ -89,16 +88,24 @@ export const Products = () =>{
                            
                             
                             onClick={()=>{
-
-                                const isInWishlist = wishlist.findIndex((item)=>item.id === prod.id)
-                             
+                                let isInWishlist = -1
+                                if(!isLogin)
+                                {
+                                     isInWishlist = -1
+                                    
+                                }
+                                else{
+                                     isInWishlist = wishlist.findIndex((item)=>item.id === prod.id)
+                                   
+                                }
                                 PostWishlist(prod,isInWishlist)
+                            
                                 }}
                             >
                                 
                                 {(wishlist!=="")?(wishlist.findIndex((item)=>item.id === prod.id))!==-1?'favorite':'favorite_outlined':'favorite_outlined'}</i>
 
-                    </div>
+                   </div>
                     <div className="card-primary">
                         <div className="card-title text-color-primary font-weight-bold">{prod.title}</div>
                         <h2 className="card-subtitle"><span className="text-muted">₹</span>{prod.price}/{prod.quantity}</h2>
@@ -117,7 +124,7 @@ export const Products = () =>{
                  })}
                  
                  </div>
-                 </div>
+                </div>
              </>
     )}
 }

@@ -15,7 +15,7 @@ export const Filter = () =>{
     }
 return (     
     
-    <div className="nav">
+    <div className="nav filter">
         
     <div className=" d-flex  text-primary border-color-gray w-100" id="navbar">
     <ul className="ul-list component-list padding-none w-100">
@@ -36,7 +36,14 @@ return (
              </li>
              </div>
         
-        <li className="margin-8 font-weight-bolder para4 ">Category</li>
+        <li className="margin-8 font-weight-bolder para4 d-flex justify-content-between  align-items-center">
+                <div>Category </div>
+                <span class="material-icons cursor-pointer margin-none"
+                onClick={()=>dispatch({type:'remove', payload:true})}
+                >
+                        filter_alt_off
+                    </span>
+        </li>
         
            
 

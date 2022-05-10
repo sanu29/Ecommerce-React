@@ -1,26 +1,26 @@
 import "./App.css"
-import "./component/style.css"
-import { Footer } from "./component/Footer";
-import { Header } from "./component/Header";
-import {BrowserRouter, Routes, Route } from "react-router-dom";
-import {Homepage, ProductListing,Wishlist, Cart } from "./pages/AllPages"
+import {Homepage,Address,Login,Signup,Cart,Checkout,NotFound,Order,ProductListing,ProductMainPage,Profile,Wishlist} from "./pages/index"
+import { Routes, Route } from "react-router-dom";
 import MockmanEs from "mockman-js";
-import { Login } from "./pages/Login";
-import { Signup } from "./pages/signup";
 import { PrivateRoute } from "./component/PrivateRoutes";
-import { useAuthContext } from "./context/auth-context";
-import { NotFound } from "./pages/NotFound";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
-  const {isLogin} = useAuthContext
+
   return (
     <div>
   
           <Routes>
             <Route path="/" element={<Homepage/>}/>
             <Route path="/product" element={<ProductListing/>}/>
+            <Route path="/product/:productId" element={<ProductMainPage/>}/>
             <Route element={<PrivateRoute/>}>
             <Route path="/wishlist" element={<Wishlist/>}/>
             <Route path="/cart" element={<Cart/>}/>
+            <Route path="/Profile" element={<Profile/>}/>
+            <Route path="/Address" element={<Address/>}/>
+            <Route path="/Order" element={<Order/>}/>
+            <Route path="/Checkout" element={<Checkout/>}/>
             </Route>
             <Route path="/login" element={<Login/>}/>
             <Route path="/signup" element={<Signup/>}/>
@@ -28,7 +28,17 @@ function App() {
             <Route path="/*" element={<NotFound/>}/>
 
           </Routes>
-
+          <ToastContainer
+          position="top-right"
+          autoClose={1000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          />
     </div>
   );
 }

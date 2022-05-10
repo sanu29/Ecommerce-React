@@ -79,6 +79,16 @@ export function FilterCategory(list, products) {
         filteredprods = filteredprods.filter((prod)=>prod.rating>=4)
     }
 
+    if(list.search !== "")
+    {   
+  
+        filteredprods = filteredprods.filter((prod)=>((prod.title).toLowerCase()).search((list.search).toLowerCase())!==-1)
+
+    }
+    if(list.remove === true)
+    {
+        filteredprods = products;
+    }
     return filteredprods;
 
 }

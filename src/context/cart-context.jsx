@@ -1,7 +1,7 @@
 import axios from "axios";
-import { createContext, useContext } from "react";
-import { useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { Navigate ,useNavigate} from "react-router-dom";
+import { Toast } from "../component/Toast";
 import { useAuthContext } from "./auth-context";
 
 const CartContext = createContext();
@@ -55,9 +55,7 @@ function CartContextProvider({children})
         {
 
             const encodedToken = localStorage.getItem('token')
-            
-           
-                   
+
                         try{
                             
                             const response = await axios({
@@ -102,6 +100,7 @@ function CartContextProvider({children})
                         )
 
                         setCart(response.data.cart)
+                        Toast("Added To Cart Successfully")
 
                     } catch(err)
                     {
@@ -114,10 +113,34 @@ function CartContextProvider({children})
         }   
         } 
 
+        const DeleteEntirecart = async () =>{
+                    
+        if(isLogin)
+        {
 
+            const encodedToken = localStorage.getItem('token')
+            
+           
+                   
+                        try{const response = await axios({
+                            method: 'delete',
+                            url: '/api/user/cart',
+                            headers: {
+                                authorization: encodedToken,
+                            }
+                         }
+
+                        )
+
+                        setCart(response.data.cart)
+
+                    } catch(err)
+                    {
+                    }
+        }}
 
     return(
-        <CartContext.Provider value={{PostCart, cart, UpdateQuantity, DeleteCart}}>
+        <CartContext.Provider value={{PostCart, cart, UpdateQuantity, DeleteCart , DeleteEntirecart}}>
             {children}
         </CartContext.Provider>
     )

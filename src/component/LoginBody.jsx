@@ -10,7 +10,7 @@ export const LoginBody= ()=>{
     return(
         <div>
      <form action="">
-    <div className="container">
+    <div className="d-flex justify-content-center auth-main ">
        <div className="container-light d-flex-column align-items-center  border-radius-md">
             <div className="terms heading2 text-color-light-black text-primary font-weight-bolder">Login</div>
                 <div className="d-flex-column w-75 margin-16 ">

@@ -1,9 +1,5 @@
 import axios from "axios";
-import { createContext } from "react";
-import { useContext } from "react";
-import { useReducer } from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import { createContext,useContext,useReducer,useState ,useEffect} from "react";
 import { FilterFunction } from "../component/FilterFunction";
 import { useProductContext } from "./products-context";
 
@@ -25,7 +21,9 @@ function FilterContextProvider ({children})
         nonveg:true,
         lowtohigh: false,
         hightolow: false,
-        rating : 1
+        rating : 1,
+        search :"",
+        remove :'false'
     })
     return(
         <FilterContext.Provider value={{state,dispatch}}>
