@@ -72,7 +72,7 @@ export const Products = () =>{
         <>         
             <div className="main-products justify-content-center">
               
-             <div className="comodities d-flex justify-content-start flex-wrap ">
+             <div className="comodities d-flex justify-content-evenly flex-wrap w-100 ">
                  {filteredprods.map((prod,key)=>{
                     return (<li className="product-list"  key={prod.id} >
                     <div className="card card-product border-radius-sm margin-8 d-flex justify-center align-items-center">
