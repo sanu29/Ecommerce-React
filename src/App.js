@@ -5,6 +5,7 @@ import MockmanEs from "mockman-js";
 import { PrivateRoute } from "./component/PrivateRoutes";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { RestrictedRoutes } from "./component/RestrictedRoutes";
 function App() {
 
   return (
@@ -22,8 +23,10 @@ function App() {
             <Route path="/Order" element={<Order/>}/>
             <Route path="/Checkout" element={<Checkout/>}/>
             </Route>
+            <Route element={<RestrictedRoutes/>}>
             <Route path="/login" element={<Login/>}/>
             <Route path="/signup" element={<Signup/>}/>
+            </Route>
             <Route path="/mock" element={<MockmanEs/>}/>
             <Route path="/*" element={<NotFound/>}/>
 
