@@ -30,7 +30,25 @@ function AuthContextProvider({children})
         setError(error)
     })
     
- 
+    useState(async()=>{
+       
+      try{ 
+           const response =await axios({
+            method: 'post',
+            url: '/api/auth/verify',
+            headers: {
+                authorization: localStorage.getItem('token'),
+            }})
+        if(response.data.status === true)
+        {
+            setUserDetails(response.data.user)  
+            setLoginStatus(true)
+            console.log(response.data.user)
+        }
+    } 
+    catch(err)
+    {}
+    },[])
 
     const Logout = ()=>{
 
@@ -75,8 +93,6 @@ const  LoginHandler = async (email,password) =>{
                     setUserDetails(response.data.foundUser)
                     localStorage.setItem("token", response.data.encodedToken); 
                     localStorage.setItem("user", JSON.stringify(response.data.foundUser)); 
-                    localStorage.setItem("password",password); 
-
                          navigate("/");
 
                     <Navigate replace to="/"/>     
